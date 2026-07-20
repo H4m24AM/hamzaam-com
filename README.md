@@ -1,142 +1,107 @@
-# hamzaam.com — Personal Brand Site
+# Hamza AM — Website Source Code
 
-React 19 + Tailwind 4 + Vite static site for [hamzaam.com](https://hamzaam.com).
-
-## Stack
-
-- **React 19** with TypeScript
-- **Tailwind CSS 4** + shadcn/ui
-- **Vite** (dev server + build)
-- **Wouter** (client-side routing)
-- **Framer Motion** (animations)
-- **pnpm** (package manager)
+Pure HTML / CSS / JavaScript. No build step required. Push to GitHub, deploy anywhere.
 
 ---
 
-## Getting Started
+## File Structure
 
-```bash
-# Install dependencies
-pnpm install
-
-# Start dev server
-pnpm dev
-
-# Build for production
-pnpm build
-
-# Preview production build
-pnpm preview
+```
+hamzaam-html/
+├── index.html          ← Homepage
+├── about.html          ← About page
+├── companies.html      ← Companies (Realty, P² Cyber, Statements)
+├── photography.html    ← RE Photography + Travel gallery
+├── travelogue.html     ← Travelogue photo journal
+├── projects.html       ← Projects / portfolio with filter
+├── contact.html        ← Contact form
+├── css/
+│   └── style.css       ← All styles (design tokens, components, pages)
+├── js/
+│   ├── main.js         ← Nav toggle, carousel, scroll animations
+│   └── components.js   ← Shared nav + footer injected on every page
+└── images/             ← ADD YOUR IMAGES HERE (see list below)
 ```
 
 ---
 
-## Project Structure
+## Deploy to Cloudflare Pages
 
-```
-client/
-  src/
-    pages/
-      Home.tsx          ← Homepage (hero, companies, about, work, photography, footer)
-      About.tsx         ← About page
-      REPhotography.tsx ← Real estate photography portfolio
-      Travelogue.tsx    ← Travel photo journal
-      Merch.tsx         ← Statements merch (links to shop.hamzaam.com)
-    components/
-      Navigation.tsx    ← Top nav bar
-      Footer.tsx        ← Site footer
-    index.css           ← Global styles + design tokens
-  index.html            ← Google Fonts loaded here
-```
+1. Push this folder to a GitHub repo
+2. Go to [pages.cloudflare.com](https://pages.cloudflare.com) → Create a project → Connect to Git
+3. Build settings:
+   - **Build command:** *(leave blank — no build needed)*
+   - **Build output directory:** `/` (root)
+4. Click **Save and Deploy**
+5. Connect `hamzaam.com` under **Custom Domains**
 
 ---
 
-## Images — Replace These
+## Images to Add
 
-All images are currently served from `/manus-storage/...` URLs which only work on Manus hosting.
+Place your images in the `images/` folder. Name them exactly as listed below,
+or update the `src` / `background-image` references in the HTML files.
 
-**For self-hosting on GitHub Pages / Vercel / Netlify / your own server:**
-
-1. Add your images to `client/public/images/`
-2. Reference them as `/images/your-photo.jpg` in the code
-
-### Images to Replace in `client/src/pages/Home.tsx`
-
-| Constant | Current placeholder | What it should be |
+| Filename | Used On | What It Should Be |
 |---|---|---|
-| `HERO_IMG` | Stock dark portrait | Hamza's actual moody/professional portrait |
-| `REALTY_IMG` | Luxury interior | Real estate listing photo |
-| `CYBER_IMG` | Circuit board | P² Cyber Solutions branded image |
-| `HOODIE_IMG` | B&W portrait | Statements hoodie / product photo |
-| `WRITING_IMG` | Writing at desk | Hamza writing or working |
-| `SKYLINE_IMG` | NYC skyline | NYC skyline or personal travel photo |
-| `HOUSE_IMG` | House exterior | Actual listing photo |
-| `BOOK_IMG` | Book cover | "Chapters of Growth" book cover |
-| `STREET_IMG` | Street at night | Personal photography work |
-| `BRIDGE_IMG` | Brooklyn Bridge | Brooklyn Bridge or personal photo |
-
-### Quick swap example
-
-```tsx
-// Before (Manus storage):
-const HERO_IMG = "/manus-storage/hero_man_dark_e068b48c.jpg";
-
-// After (self-hosted):
-const HERO_IMG = "/images/hamza-hero.jpg";
-```
-
----
-
-## Design System
-
-| Token | Value |
-|---|---|
-| Gold accent | `#C8A96E` |
-| Black | `#0D0D0D` |
-| Dark section | `#111111` |
-| White | `#FFFFFF` |
-| Off-white | `#F8F6F2` |
-| Border | `#E5E5E5` |
-
-**Fonts** (loaded via Google Fonts in `client/index.html`):
-- `Barlow Condensed` — nav, labels, buttons
-- `DM Sans` — headlines, body
-- `Playfair Display` — signature (italic)
-- `Space Mono` — small caps metadata labels
+| `hero.jpg` | Homepage hero | Dark, moody portrait of Hamza — seated, professional |
+| `card-realty.jpg` | Companies grid | Luxury NYC real estate interior |
+| `card-cyber.jpg` | Companies grid | Dark server room or circuit board |
+| `card-statements.jpg` | Companies grid | Statements hoodie or apparel product shot |
+| `who-writing.jpg` | Who I Am section | Hamza writing or working at a desk |
+| `who-skyline.jpg` | Who I Am section | NYC skyline or personal travel photo |
+| `work-realty.jpg` | Recent Work | Real estate listing photo |
+| `work-statements.jpg` | Recent Work | Statements product / drop photo |
+| `work-cyber.jpg` | Recent Work | Cybersecurity / tech abstract |
+| `work-book.jpg` | Recent Work | "Chapters of Growth" book cover |
+| `work-photo.jpg` | Recent Work | Street or personal photography |
+| `photography.jpg` | Photography split | Brooklyn Bridge or dramatic landscape |
+| `about-bg.jpg` | About hero | Dark architectural or cityscape |
+| `about-portrait.jpg` | About bio | Hamza portrait — B&W preferred |
+| `re-photography-hero.jpg` | Photography hero | Dramatic real estate or skyline shot |
+| `re-1.jpg` … `re-6.jpg` | RE gallery | Property interior/exterior photos |
+| `travel-1.jpg` … `travel-8.jpg` | Travelogue | Travel photos with location labels |
+| `travelogue-hero.jpg` | Travelogue hero | Dramatic travel landscape |
+| `companies-hero.jpg` | Companies hero | Cityscape or business environment |
+| `projects-hero.jpg` | Projects hero | Dark abstract or workspace |
 
 ---
 
-## Pages & Routes
+## Links to Update
 
-| Route | Page |
-|---|---|
-| `/` | Home |
-| `/about` | About |
-| `/re-photography` | RE Photography |
-| `/travelogue` | Travelogue |
-| `/merch` | Merch (redirects to shop.hamzaam.com) |
+Search for these placeholders and replace with real values:
 
----
-
-## Deploying to GitHub Pages
-
-```bash
-# Install gh-pages
-pnpm add -D gh-pages
-
-# Add to package.json scripts:
-# "deploy": "pnpm build && gh-pages -d dist/public"
-
-pnpm deploy
-```
-
-For **Vercel** or **Netlify**, just connect the repo — both auto-detect Vite and build with `pnpm build`, output dir `dist/public`.
+| Placeholder | File | Replace With |
+|---|---|---|
+| `YOUR-EMAIL` | `contact.html`, `js/components.js` | `hello@hamzaam.com` |
+| `YOUR-INSTAGRAM-URL` | `contact.html`, `js/components.js` | `https://instagram.com/yourhandle` |
+| `YOUR-LINKEDIN-URL` | `contact.html`, `js/components.js` | `https://linkedin.com/in/yourprofile` |
+| `href="#"` | Various | Real page URLs once content is ready |
 
 ---
 
-## Sub-brands
+## Contact Form
 
-| Brand | URL |
-|---|---|
-| Real Estate | [realty.hamzaam.com](https://realty.hamzaam.com) |
-| Statements Merch | [shop.hamzaam.com](https://shop.hamzaam.com) |
+The contact form in `contact.html` currently shows a success message on submit.
+To make it actually send emails, replace the `handleContactForm` function with one of:
+
+- **[Formspree](https://formspree.io)** — add `action="https://formspree.io/f/YOUR_ID"` and `method="POST"` to the `<form>` tag
+- **[Netlify Forms](https://docs.netlify.com/forms/setup/)** — add `netlify` attribute to the `<form>` tag
+- **[Web3Forms](https://web3forms.com)** — free, no backend needed
+
+---
+
+## Design Tokens
+
+All colors and fonts are defined as CSS variables in `css/style.css` under `:root {}`.
+Edit once there and all pages inherit the values.
+
+| Token | Value | Used For |
+|---|---|---|
+| `--gold` | `#C8A96E` | Accents, labels, CTAs |
+| `--black` | `#0D0D0D` | Backgrounds, text |
+| `--dark` | `#111111` | Dark sections |
+| `--white` | `#FFFFFF` | Light sections |
+| `--offwhite` | `#F8F6F2` | Card backgrounds |
+
+**Fonts:** Barlow Condensed · DM Sans · Playfair Display · Space Mono (Google Fonts, loaded in `style.css`)

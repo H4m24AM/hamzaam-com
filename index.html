@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hamza AM — Entrepreneur. Creator. Builder.</title>
+  <meta name="description" content="Hamza AM is a Brooklyn-based entrepreneur, real estate agent, cybersecurity consultant, author, and photographer." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Nav injected by components.js -->
+  <div id="nav-placeholder"></div>
+
+  <!-- ══════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__location">Brooklyn, NY</div>
+
+    <div class="hero__content">
+      <p class="hero__eyebrow">Entrepreneur. Creator. Builder.</p>
+      <h1 class="hero__headline">
+        Ideas into <em>impact.</em><br>
+        Vision into <em>value.</em>
+      </h1>
+      <p class="hero__sub">
+        I build businesses, solve problems, and create things that matter.
+        Across real estate, technology, apparel, and beyond.
+      </p>
+      <div class="hero__btns">
+        <a href="/companies.html" class="btn btn--white">Explore My World →</a>
+        <a href="/about.html"     class="btn btn--white">About Hamza →</a>
+      </div>
+    </div>
+
+    <div class="hero__scroll">↓</div>
+    <div class="hero__sig">Hamza AM</div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       WHAT I DO
+  ══════════════════════════════════════════ -->
+  <section class="wid">
+    <div class="wid__header">
+      <span class="label label--muted">What I Do</span>
+      <h2 class="wid__title">Different industries. One standard: excellence.</h2>
+      <span class="gold-rule"></span>
+    </div>
+
+    <div class="wid__grid">
+
+      <!-- Realty -->
+      <a href="https://realty.hamzaam.com" class="wid__card" target="_blank" rel="noopener">
+        <div class="wid__card-bg" style="background-image: url('images/card-realty.jpg');"></div>
+        <div class="wid__card-icon">H</div>
+        <div class="wid__card-body">
+          <p class="wid__card-name">Realty Estate</p>
+          <p class="wid__card-desc">Helping clients buy, sell, rent and invest with confidence across New York.</p>
+          <span class="wid__card-link">Visit Realty →</span>
+        </div>
+      </a>
+
+      <!-- P² Cyber -->
+      <a href="companies.html#cyber" class="wid__card">
+        <div class="wid__card-bg" style="background-image: url('images/card-cyber.jpg');"></div>
+        <div class="wid__card-icon">P²</div>
+        <div class="wid__card-body">
+          <p class="wid__card-name">P² Cyber Solutions</p>
+          <p class="wid__card-desc">Managed IT, cybersecurity and AI automation that power business growth.</p>
+          <span class="wid__card-link">Visit P² Cyber →</span>
+        </div>
+      </a>
+
+      <!-- Statements -->
+      <a href="https://shop.hamzaam.com" class="wid__card" target="_blank" rel="noopener">
+        <div class="wid__card-bg" style="background-image: url('images/card-statements.jpg');"></div>
+        <div class="wid__card-icon">↑</div>
+        <div class="wid__card-body">
+          <p class="wid__card-name">Statements</p>
+          <p class="wid__card-desc">Apparel inspired by faith, culture and conversation.</p>
+          <span class="wid__card-link">Shop Statements →</span>
+        </div>
+      </a>
+
+    </div>
+
+    <a href="companies.html" class="wid__all">Explore All Companies →</a>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       WHO I AM
+  ══════════════════════════════════════════ -->
+  <section class="who">
+    <div class="who__text">
+      <span class="label">Who I Am</span>
+      <h2 class="who__headline">
+        Builder.<br>Creator.<br>Problem Solver.
+      </h2>
+      <p class="who__body">
+        I'm a Brooklyn-based entrepreneur and creative whose work lives at the
+        intersection of business, technology, photography, writing, and design.
+      </p>
+      <p class="who__body">
+        My mission is simple: add value, leave a legacy,<br>
+        and help others do the same.
+      </p>
+      <a href="about.html" class="btn btn--white who__cta">More About Hamza →</a>
+    </div>
+    <div class="who__photos">
+      <div class="who__photo" style="background-image: url('images/who-writing.jpg');"></div>
+      <div class="who__photo" style="background-image: url('images/who-skyline.jpg');"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       RECENT WORK
+  ══════════════════════════════════════════ -->
+  <section class="work">
+    <div class="work__header">
+      <span class="label label--muted">Recent Work</span>
+      <div class="work__rule"></div>
+    </div>
+
+    <div class="work__outer">
+      <button class="work__arrow work__arrow--prev" onclick="workSlide(-1)" aria-label="Previous">←</button>
+
+      <div class="work__track-wrap">
+        <div class="work__track" id="workTrack">
+
+          <a href="https://realty.hamzaam.com" class="work__card" target="_blank" rel="noopener">
+            <div class="work__card-img" style="background-image: url('images/work-realty.jpg');"></div>
+            <div class="work__card-body">
+              <p class="work__card-cat">Real Estate</p>
+              <p class="work__card-title">Just Listed in Bedford-Stuyvesant</p>
+              <span class="work__card-cta">View Listing →</span>
+            </div>
+          </a>
+
+          <a href="https://shop.hamzaam.com" class="work__card" target="_blank" rel="noopener">
+            <div class="work__card-img" style="background-image: url('images/work-statements.jpg');"></div>
+            <div class="work__card-body">
+              <p class="work__card-cat">Statements</p>
+              <p class="work__card-title">New Drop: Faith Over Fear</p>
+              <span class="work__card-cta">Shop Now →</span>
+            </div>
+          </a>
+
+          <a href="companies.html#cyber" class="work__card">
+            <div class="work__card-img" style="background-image: url('images/work-cyber.jpg');"></div>
+            <div class="work__card-body">
+              <p class="work__card-cat">Cybersecurity</p>
+              <p class="work__card-title">Why Cybersecurity Is Business Critical</p>
+              <span class="work__card-cta">Read Article →</span>
+            </div>
+          </a>
+
+          <a href="#" class="work__card">
+            <div class="work__card-img" style="background-image: url('images/work-book.jpg');"></div>
+            <div class="work__card-body">
+              <p class="work__card-cat">Author</p>
+              <p class="work__card-title">Chapters of Growth Now Available</p>
+              <span class="work__card-cta">Learn More →</span>
+            </div>
+          </a>
+
+          <a href="photography.html" class="work__card">
+            <div class="work__card-img" style="background-image: url('images/work-photo.jpg');"></div>
+            <div class="work__card-body">
+              <p class="work__card-cat">Photography</p>
+              <p class="work__card-title">Fatherhood. Captured.</p>
+              <span class="work__card-cta">View Gallery →</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <button class="work__arrow work__arrow--next" onclick="workSlide(1)" aria-label="Next">→</button>
+    </div>
+
+    <div class="work__footer">
+      <a href="projects.html" class="work__all">View All Projects →</a>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       PHOTOGRAPHY SPLIT
+  ══════════════════════════════════════════ -->
+  <section class="photo-split">
+    <div class="photo-split__img"></div>
+    <div class="photo-split__text">
+      <span class="label">Behind the Lens</span>
+      <h2 class="photo-split__headline">
+        Photography that tells<br>the real story.
+      </h2>
+      <p class="photo-split__sub">
+        From architecture to everyday moments, my camera
+        captures what words can't always say.
+      </p>
+      <a href="photography.html" class="btn btn--white">Explore Photography →</a>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       VALUES STRIP
+  ══════════════════════════════════════════ -->
+  <section class="values">
+    <div class="values__grid">
+      <div class="values__item">
+        <div class="values__icon">♟</div>
+        <p class="values__name">Strategic Mindset</p>
+        <p class="values__desc">Every decision is intentional.</p>
+      </div>
+      <div class="values__item">
+        <div class="values__icon">⚡</div>
+        <p class="values__name">Relentless Execution</p>
+        <p class="values__desc">Ideas mean nothing without action.</p>
+      </div>
+      <div class="values__item">
+        <div class="values__icon">◎</div>
+        <p class="values__name">Community Focused</p>
+        <p class="values__desc">Success is better when shared.</p>
+      </div>
+      <div class="values__item">
+        <div class="values__icon">✦</div>
+        <p class="values__name">Faith Driven</p>
+        <p class="values__desc">Purpose guides everything.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer injected by components.js -->
+  <div id="footer-placeholder"></div>
+
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

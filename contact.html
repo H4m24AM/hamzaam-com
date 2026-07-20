@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Hamza AM</title>
+  <meta name="description" content="Get in touch with Hamza AM for real estate, cybersecurity, photography, or general inquiries." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <!-- Hero -->
+  <section class="contact-hero">
+    <span class="label">Get In Touch</span>
+    <h1 class="contact-hero__title">
+      Let's build something<br>great together.
+    </h1>
+    <p class="contact-hero__sub">
+      Whether it's real estate, cybersecurity, photography, or a new idea —
+      I'm always open to a conversation.
+    </p>
+  </section>
+
+  <!-- Body -->
+  <div class="contact-body">
+
+    <!-- Info -->
+    <div class="contact-info">
+      <span class="label">Reach Out</span>
+      <h2 class="contact-info__title">
+        Ready when<br>you are.
+      </h2>
+
+      <div class="contact-info__item">
+        <div class="contact-info__icon">📧</div>
+        <div>
+          <p class="contact-info__label">Email</p>
+          <a href="mailto:YOUR-EMAIL" class="contact-info__value">YOUR-EMAIL</a>
+        </div>
+      </div>
+
+      <div class="contact-info__item">
+        <div class="contact-info__icon">📍</div>
+        <div>
+          <p class="contact-info__label">Location</p>
+          <p class="contact-info__value">Brooklyn, New York</p>
+        </div>
+      </div>
+
+      <div class="contact-info__item">
+        <div class="contact-info__icon">IG</div>
+        <div>
+          <p class="contact-info__label">Instagram</p>
+          <a href="YOUR-INSTAGRAM-URL" target="_blank" rel="noopener" class="contact-info__value">@hamzaam</a>
+        </div>
+      </div>
+
+      <div class="contact-info__item">
+        <div class="contact-info__icon">in</div>
+        <div>
+          <p class="contact-info__label">LinkedIn</p>
+          <a href="YOUR-LINKEDIN-URL" target="_blank" rel="noopener" class="contact-info__value">Hamza Abdul-Mumit</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <form class="contact-form" onsubmit="handleContactForm(event)">
+      <div class="contact-form__row">
+        <div class="contact-form__group">
+          <label for="cf-name">Name</label>
+          <input type="text" id="cf-name" name="name" placeholder="Your full name" required />
+        </div>
+        <div class="contact-form__group">
+          <label for="cf-email">Email</label>
+          <input type="email" id="cf-email" name="email" placeholder="your@email.com" required />
+        </div>
+      </div>
+      <div class="contact-form__group">
+        <label for="cf-subject">Subject</label>
+        <select id="cf-subject" name="subject">
+          <option value="">Select a topic</option>
+          <option value="realty">Real Estate</option>
+          <option value="cyber">Cybersecurity / IT</option>
+          <option value="photography">Photography</option>
+          <option value="statements">Statements / Apparel</option>
+          <option value="general">General Inquiry</option>
+        </select>
+      </div>
+      <div class="contact-form__group">
+        <label for="cf-message">Message</label>
+        <textarea id="cf-message" name="message" placeholder="Tell me about your project or question..." required></textarea>
+      </div>
+      <button type="submit" class="btn btn--solid-black" style="align-self:flex-start;">Send Message →</button>
+      <p id="cf-success" style="display:none;font-family:var(--f-mono);font-size:0.7rem;letter-spacing:0.12em;color:green;margin-top:0.5rem;">
+        MESSAGE SENT — I'll be in touch soon.
+      </p>
+    </form>
+
+  </div>
+
+  <div id="footer-placeholder"></div>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    function handleContactForm(e) {
+      e.preventDefault();
+      // Replace this with your actual form handler (Formspree, Netlify Forms, etc.)
+      // Example with Formspree: set action="https://formspree.io/f/YOUR_ID" method="POST"
+      document.getElementById('cf-success').style.display = 'block';
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
