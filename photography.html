@@ -9,20 +9,50 @@
 </head>
 <body>
 
-  <div id="nav-placeholder"></div>
+  <!-- ══════════════════════════════════════════
+       NAVIGATION
+       On subpages, anchor links point back to
+       index.html#section for smooth scroll.
+  ══════════════════════════════════════════ -->
+  <nav class="nav" id="mainNav">
+    <a href="index.html#home" class="nav__logo">HAMZA <span>AM</span></a>
 
-  <!-- Hero -->
+    <ul class="nav__links">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#companies">Companies</a></li>
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="photography.html" class="active">Photography</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+
+    <a href="index.html#contact" class="nav__cta">Let's Connect &nbsp;↗</a>
+
+    <button class="nav__toggle" id="navToggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <!-- END NAVIGATION -->
+
+  <div class="nav-spacer"></div>
+
+  <!-- ══════════════════════════════════════════
+       PHOTOGRAPHY HERO
+  ══════════════════════════════════════════ -->
   <section class="photo-hero">
     <div class="photo-hero__bg"></div>
     <div class="photo-hero__overlay"></div>
-    <div class="photo-hero__content">
+    <div class="photo-hero__content container">
       <span class="label" style="margin-bottom:1rem;">Behind the Lens</span>
       <h1 class="photo-hero__title">RE Photography</h1>
       <p class="photo-hero__sub">Capturing spaces, stories, and the world in between.</p>
     </div>
   </section>
+  <!-- END PHOTOGRAPHY HERO -->
 
-  <!-- Stats -->
+  <!-- ══════════════════════════════════════════
+       STATS STRIP
+  ══════════════════════════════════════════ -->
   <div class="photo-stats">
     <div class="photo-stats__grid">
       <div class="photo-stat">
@@ -43,8 +73,11 @@
       </div>
     </div>
   </div>
+  <!-- END STATS STRIP -->
 
-  <!-- Gallery — Real Estate -->
+  <!-- ══════════════════════════════════════════
+       GALLERY — REAL ESTATE
+  ══════════════════════════════════════════ -->
   <section class="photo-gallery">
     <div class="container">
       <span class="label label--muted" style="margin-bottom:0.5rem;">Real Estate</span>
@@ -91,8 +124,11 @@
       </div>
     </div>
   </section>
+  <!-- END GALLERY — REAL ESTATE -->
 
-  <!-- Gallery — Travel -->
+  <!-- ══════════════════════════════════════════
+       GALLERY — TRAVEL
+  ══════════════════════════════════════════ -->
   <section class="photo-gallery" style="background: var(--offwhite); padding-top: 0;">
     <div class="container">
       <span class="label label--muted" style="margin-bottom:0.5rem;">Travel</span>
@@ -101,37 +137,37 @@
 
       <div class="photo-gallery__grid">
         <div class="photo-gallery__item">
-          <img src="images/travel-1.jpg" alt="Travel photo 1" loading="lazy" />
+          <img src="images/travel-1.jpg" alt="Dubai" loading="lazy" />
           <div class="photo-gallery__item-overlay">
             <span class="photo-gallery__item-label">Dubai, UAE</span>
           </div>
         </div>
         <div class="photo-gallery__item">
-          <img src="images/travel-2.jpg" alt="Travel photo 2" loading="lazy" />
+          <img src="images/travel-2.jpg" alt="London" loading="lazy" />
           <div class="photo-gallery__item-overlay">
             <span class="photo-gallery__item-label">London, UK</span>
           </div>
         </div>
         <div class="photo-gallery__item">
-          <img src="images/travel-3.jpg" alt="Travel photo 3" loading="lazy" />
+          <img src="images/travel-3.jpg" alt="Istanbul" loading="lazy" />
           <div class="photo-gallery__item-overlay">
             <span class="photo-gallery__item-label">Istanbul, TR</span>
           </div>
         </div>
         <div class="photo-gallery__item">
-          <img src="images/travel-4.jpg" alt="Travel photo 4" loading="lazy" />
+          <img src="images/travel-4.jpg" alt="Morocco" loading="lazy" />
           <div class="photo-gallery__item-overlay">
             <span class="photo-gallery__item-label">Morocco</span>
           </div>
         </div>
         <div class="photo-gallery__item">
-          <img src="images/travel-5.jpg" alt="Travel photo 5" loading="lazy" />
+          <img src="images/travel-5.jpg" alt="Cairo" loading="lazy" />
           <div class="photo-gallery__item-overlay">
             <span class="photo-gallery__item-label">Cairo, EG</span>
           </div>
         </div>
         <div class="photo-gallery__item">
-          <img src="images/travel-6.jpg" alt="Travel photo 6" loading="lazy" />
+          <img src="images/travel-6.jpg" alt="Brooklyn" loading="lazy" />
           <div class="photo-gallery__item-overlay">
             <span class="photo-gallery__item-label">Brooklyn, NY</span>
           </div>
@@ -139,8 +175,11 @@
       </div>
     </div>
   </section>
+  <!-- END GALLERY — TRAVEL -->
 
-  <!-- CTA -->
+  <!-- ══════════════════════════════════════════
+       CTA
+  ══════════════════════════════════════════ -->
   <section class="section section--dark" style="text-align:center;">
     <span class="label" style="margin-bottom:1rem;">Ready to Work Together?</span>
     <h2 style="font-family:var(--f-body);font-size:clamp(1.8rem,4vw,3rem);font-weight:700;color:var(--white);margin-bottom:1rem;">
@@ -149,11 +188,61 @@
     <p style="font-family:var(--f-body);font-size:0.95rem;font-weight:300;color:rgba(255,255,255,0.6);max-width:420px;margin:0 auto 2rem;line-height:1.7;">
       Professional real estate photography that helps listings stand out and sell faster.
     </p>
-    <a href="contact.html" class="btn btn--white">Book a Shoot →</a>
+    <a href="index.html#contact" class="btn btn--white">Book a Shoot →</a>
   </section>
+  <!-- END CTA -->
 
-  <div id="footer-placeholder"></div>
-  <script src="js/components.js"></script>
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div>
+        <a href="index.html#home" class="footer__logo">HAMZA <span>AM</span></a>
+        <p class="footer__desc">Entrepreneur. Real Estate Agent.<br>Cybersecurity Consultant. Author.<br>Photographer.</p>
+        <p class="footer__location">📍 Brooklyn, NY</p>
+      </div>
+      <div>
+        <p class="footer__col-title">Companies</p>
+        <ul class="footer__links">
+          <li><a href="https://realty.hamzaam.com" target="_blank" rel="noopener">Realty <span>→</span></a></li>
+          <li><a href="index.html#companies">P² Cyber Solutions <span>→</span></a></li>
+          <li><a href="https://shop.hamzaam.com" target="_blank" rel="noopener">Statements <span>→</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Quick Links</p>
+        <ul class="footer__links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="photography.html">Photography</a></li>
+          <li><a href="index.html#work">Projects</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Connect</p>
+        <ul class="footer__social">
+          <li><a href="YOUR-INSTAGRAM-URL" target="_blank" rel="noopener"><span class="footer__social-icon">IG</span> Instagram</a></li>
+          <li><a href="YOUR-LINKEDIN-URL" target="_blank" rel="noopener"><span class="footer__social-icon">in</span> LinkedIn</a></li>
+          <li><a href="mailto:YOUR-EMAIL"><span class="footer__social-icon">@</span> Email</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__nl-title">Stay Connected</p>
+        <p class="footer__nl-desc">Get updates on new projects, listings, drops and insights.</p>
+        <form class="footer__form" onsubmit="return false;">
+          <input type="email" placeholder="Enter your email" aria-label="Email" />
+          <button type="submit">→</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2024 Hamza AM. All Rights Reserved.</p>
+      <p class="footer__copy">Brooklyn, NY</p>
+    </div>
+  </footer>
+  <!-- END FOOTER -->
+
   <script src="js/main.js"></script>
 </body>
 </html>
