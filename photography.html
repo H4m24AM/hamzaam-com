@@ -4,19 +4,471 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Photography — Hamza AM</title>
-  <meta name="description" content="Real estate and travel photography by Hamza AM. One lens. Unfiltered moments." />
+  <meta name="description" content="Photography by Hamza AM — Black Fathers Matter, Real Estate, Travel, Street, Portraits and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ─── PHOTOGRAPHY PAGE OVERRIDES ─── */
+
+    /* ── NAV ── */
+    .nav { background: #fff; border-bottom: 1px solid #e8e8e8; }
+    .nav__logo { color: #0d0d0d; }
+    .nav__logo span { color: #0d0d0d; font-weight: 300; }
+    .nav__links a { color: #0d0d0d; }
+    .nav__links a.active { border-bottom: 2px solid #0d0d0d; padding-bottom: 2px; }
+    .nav__cta { background: #0d0d0d; color: #fff; }
+    .nav__toggle span { background: #0d0d0d; }
+
+    /* ── HERO ── */
+    .ph-hero {
+      position: relative;
+      height: 80vh;
+      min-height: 520px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+    .ph-hero__bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/photography-hero.jpg');
+      background-size: cover;
+      background-position: center 30%;
+      transform: scale(1.03);
+      transition: transform 8s ease;
+    }
+    .ph-hero:hover .ph-hero__bg { transform: scale(1); }
+    .ph-hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.15) 60%, transparent 100%);
+    }
+    .ph-hero__content {
+      position: relative;
+      z-index: 2;
+      padding: 0 4rem 3.5rem;
+      max-width: 700px;
+    }
+    .ph-hero__eyebrow {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .ph-hero__eyebrow::after {
+      content: '';
+      display: inline-block;
+      width: 2rem;
+      height: 1px;
+      background: rgba(255,255,255,0.4);
+    }
+    .ph-hero__title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 0;
+    }
+    .ph-hero__scroll {
+      position: absolute;
+      bottom: 2.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      color: rgba(255,255,255,0.6);
+      font-size: 1.1rem;
+      animation: bounceDown 2s infinite;
+      text-decoration: none;
+    }
+    @keyframes bounceDown {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ── FEATURED PROJECTS ── */
+    .ph-featured {
+      padding: 4rem 4rem 3rem;
+      background: #fff;
+    }
+    .ph-featured__header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #e8e8e8;
+      padding-bottom: 0.8rem;
+    }
+    .ph-featured__label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #888;
+    }
+    .ph-featured__view-all {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #0d0d0d;
+      text-decoration: none;
+      border-bottom: 1px solid #0d0d0d;
+      padding-bottom: 1px;
+      transition: opacity 0.2s;
+    }
+    .ph-featured__view-all:hover { opacity: 0.5; }
+    .ph-featured__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .ph-proj-card {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .ph-proj-card__img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+      background: #f0f0f0;
+      background-size: cover;
+      background-position: center;
+      margin-bottom: 1.2rem;
+      transition: transform 0.5s cubic-bezier(0.23,1,0.32,1);
+      overflow: hidden;
+    }
+    .ph-proj-card:hover .ph-proj-card__img { transform: scale(1.02); }
+    .ph-proj-card__meta {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 0.5rem;
+    }
+    .ph-proj-card__title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem;
+      font-weight: 400;
+      color: #0d0d0d;
+      line-height: 1.25;
+      margin-bottom: 0.6rem;
+    }
+    .ph-proj-card__desc {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: #555;
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+    .ph-proj-card__cta {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #0d0d0d;
+      border-bottom: 1px solid #0d0d0d;
+      padding-bottom: 1px;
+      transition: opacity 0.2s;
+    }
+    .ph-proj-card:hover .ph-proj-card__cta { opacity: 0.5; }
+
+    /* ── PROJECT ARCHIVE ── */
+    .ph-archive {
+      padding: 4rem;
+      background: #fafafa;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .ph-archive__sidebar {}
+    .ph-archive__sidebar-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 1.2rem;
+    }
+    .ph-archive__cats {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .ph-archive__cats li {
+      margin-bottom: 0;
+    }
+    .ph-archive__cats button {
+      background: none;
+      border: none;
+      padding: 0.45rem 0;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #555;
+      cursor: pointer;
+      text-align: left;
+      width: 100%;
+      transition: color 0.2s;
+      border-left: 2px solid transparent;
+      padding-left: 0.75rem;
+    }
+    .ph-archive__cats button:hover { color: #0d0d0d; }
+    .ph-archive__cats button.active {
+      color: #0d0d0d;
+      font-weight: 500;
+      border-left-color: #0d0d0d;
+    }
+    .ph-archive__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+    }
+    .ph-archive__item {
+      aspect-ratio: 4/3;
+      background: #e0e0e0;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+    }
+    .ph-archive__item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0);
+      transition: background 0.3s;
+    }
+    .ph-archive__item:hover::after { background: rgba(0,0,0,0.15); }
+    .ph-archive__load {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 2rem 0 0;
+    }
+    .ph-archive__load-btn {
+      background: none;
+      border: 1px solid #0d0d0d;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #0d0d0d;
+      padding: 0.75rem 2rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .ph-archive__load-btn:hover { background: #0d0d0d; color: #fff; }
+
+    /* ── ABOUT PHOTOGRAPHY ── */
+    .ph-about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 420px;
+    }
+    .ph-about__img {
+      background-image: url('images/photography-about.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .ph-about__text {
+      background: #fafafa;
+      padding: 5rem 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .ph-about__eyebrow {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .ph-about__eyebrow::after {
+      content: '';
+      display: inline-block;
+      width: 2rem;
+      height: 1px;
+      background: #ccc;
+    }
+    .ph-about__headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 400;
+      color: #0d0d0d;
+      line-height: 1.2;
+      margin-bottom: 1.4rem;
+    }
+    .ph-about__body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+    .ph-about__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #0d0d0d;
+      text-decoration: none;
+      border-bottom: 1px solid #0d0d0d;
+      padding-bottom: 2px;
+      width: fit-content;
+      transition: opacity 0.2s;
+    }
+    .ph-about__cta:hover { opacity: 0.5; }
+
+    /* ── FOOTER (photography page) ── */
+    .ph-footer {
+      background: #0d0d0d;
+      color: #fff;
+      padding: 3.5rem 4rem 2rem;
+    }
+    .ph-footer__top {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 1.5rem;
+    }
+    .ph-footer__logo {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+    .ph-footer__logo span { font-weight: 300; }
+    .ph-footer__desc {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+      margin-bottom: 0.6rem;
+    }
+    .ph-footer__location {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.06em;
+    }
+    .ph-footer__col-title {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 1rem;
+    }
+    .ph-footer__links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .ph-footer__links li { margin-bottom: 0.5rem; }
+    .ph-footer__links a {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .ph-footer__links a:hover { color: #fff; }
+    .ph-footer__cta-box {
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 1.2rem;
+    }
+    .ph-footer__cta-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+    .ph-footer__cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #fff;
+      color: #0d0d0d;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.65rem 1.2rem;
+      transition: background 0.2s, color 0.2s;
+    }
+    .ph-footer__cta-btn:hover { background: #C8A96E; color: #fff; }
+    .ph-footer__bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .ph-footer__copy {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .ph-hero__content { padding: 0 2rem 2.5rem; }
+      .ph-featured { padding: 3rem 2rem 2rem; }
+      .ph-featured__grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .ph-archive { padding: 3rem 2rem; grid-template-columns: 1fr; }
+      .ph-archive__grid { grid-template-columns: repeat(2, 1fr); }
+      .ph-about { grid-template-columns: 1fr; }
+      .ph-about__img { height: 300px; }
+      .ph-about__text { padding: 3rem 2rem; }
+      .ph-footer { padding: 3rem 2rem 2rem; }
+      .ph-footer__top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+    @media (max-width: 600px) {
+      .ph-archive__grid { grid-template-columns: repeat(2, 1fr); }
+      .ph-footer__top { grid-template-columns: 1fr; }
+      .ph-footer__bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+  </style>
 </head>
 <body>
 
   <!-- ══════════════════════════════════════════
        NAVIGATION
-       On subpages, anchor links point back to
-       index.html#section for smooth scroll.
   ══════════════════════════════════════════ -->
   <nav class="nav" id="mainNav">
     <a href="index.html#home" class="nav__logo">HAMZA <span>AM</span></a>
-
     <ul class="nav__links">
       <li><a href="index.html#home">Home</a></li>
       <li><a href="index.html#companies">Companies</a></li>
@@ -25,224 +477,226 @@
       <li><a href="about.html">About</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
-
     <a href="index.html#contact" class="nav__cta">Let's Connect &nbsp;↗</a>
-
     <button class="nav__toggle" id="navToggle" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
+  <div class="nav-spacer"></div>
   <!-- END NAVIGATION -->
 
-  <div class="nav-spacer"></div>
+  <!-- ══════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════ -->
+  <section class="ph-hero">
+    <div class="ph-hero__bg" id="phHeroBg"></div>
+    <div class="ph-hero__overlay"></div>
+    <div class="ph-hero__content">
+      <p class="ph-hero__eyebrow">Photography</p>
+      <h1 class="ph-hero__title">
+        Observing.<br>
+        Documenting.<br>
+        Preserving what matters.
+      </h1>
+    </div>
+    <a href="#ph-featured" class="ph-hero__scroll" aria-label="Scroll down">↓</a>
+  </section>
+  <!-- END HERO -->
 
   <!-- ══════════════════════════════════════════
-       PHOTOGRAPHY HERO
+       FEATURED PROJECTS
   ══════════════════════════════════════════ -->
-  <section class="photo-hero">
-    <div class="photo-hero__bg"></div>
-    <div class="photo-hero__overlay"></div>
-    <div class="photo-hero__content container">
-      <span class="label" style="margin-bottom:1rem;">Behind the Lens</span>
-      <h1 class="photo-hero__title">RE Photography</h1>
-      <p class="photo-hero__sub">Capturing spaces, stories, and the world in between.</p>
+  <section class="ph-featured" id="ph-featured">
+    <div class="ph-featured__header">
+      <span class="ph-featured__label">Featured Projects</span>
+      <a href="#ph-archive" class="ph-featured__view-all">View All Projects →</a>
+    </div>
+    <div class="ph-featured__grid">
+
+      <!-- Card 1: Black Fathers Matter -->
+      <a href="https://www.npr.org/sections/pictureshow/2022/06/18/1104283210/hamza-abdul-mumit-black-fathers-matter"
+         class="ph-proj-card" target="_blank" rel="noopener">
+        <div class="ph-proj-card__img"
+             style="background-image: url('images/proj-black-fathers.jpg');"></div>
+        <p class="ph-proj-card__meta">2016–Present</p>
+        <h2 class="ph-proj-card__title">Black Fathers Matter</h2>
+        <p class="ph-proj-card__desc">Portraits exploring fatherhood,<br>presence, and legacy.</p>
+        <span class="ph-proj-card__cta">View Project →</span>
+      </a>
+
+      <!-- Card 2: Real Estate & Architecture -->
+      <a href="#ph-archive" class="ph-proj-card">
+        <div class="ph-proj-card__img"
+             style="background-image: url('images/proj-realestate.jpg');"></div>
+        <p class="ph-proj-card__meta">Real Estate &amp; Architecture</p>
+        <h2 class="ph-proj-card__title">Spaces with Purpose</h2>
+        <p class="ph-proj-card__desc">Documenting spaces designed<br>for living, working, and gathering.</p>
+        <span class="ph-proj-card__cta">View Project →</span>
+      </a>
+
+      <!-- Card 3: Travel -->
+      <a href="#ph-archive" class="ph-proj-card">
+        <div class="ph-proj-card__img"
+             style="background-image: url('images/proj-travel.jpg');"></div>
+        <p class="ph-proj-card__meta">Travel</p>
+        <h2 class="ph-proj-card__title">Cuba</h2>
+        <p class="ph-proj-card__desc">Capturing everyday life,<br>culture, and color.</p>
+        <span class="ph-proj-card__cta">View Project →</span>
+      </a>
+
     </div>
   </section>
-  <!-- END PHOTOGRAPHY HERO -->
+  <!-- END FEATURED PROJECTS -->
 
   <!-- ══════════════════════════════════════════
-       STATS STRIP
+       PROJECT ARCHIVE
   ══════════════════════════════════════════ -->
-  <div class="photo-stats">
-    <div class="photo-stats__grid">
-      <div class="photo-stat">
-        <p class="photo-stat__num">200+</p>
-        <p class="photo-stat__label">Properties Shot</p>
+  <section class="ph-archive" id="ph-archive">
+
+    <!-- Sidebar filter -->
+    <aside class="ph-archive__sidebar">
+      <p class="ph-archive__sidebar-label">Browse All Projects</p>
+      <ul class="ph-archive__cats" id="archiveCats">
+        <li><button class="active" data-cat="all">All Projects</button></li>
+        <li><button data-cat="black-fathers">Black Fathers Matter</button></li>
+        <li><button data-cat="real-estate">Real Estate</button></li>
+        <li><button data-cat="travel">Travel</button></li>
+        <li><button data-cat="street">Street</button></li>
+        <li><button data-cat="portraits">Portraits</button></li>
+        <li><button data-cat="architecture">Architecture</button></li>
+        <li><button data-cat="community">Community</button></li>
+        <li><button data-cat="statements">Statements</button></li>
+        <li><button data-cat="saudi-arabia">Saudi Arabia</button></li>
+      </ul>
+    </aside>
+
+    <!-- Photo grid -->
+    <div>
+      <div class="ph-archive__grid" id="archiveGrid">
+        <div class="ph-archive__item" data-cat="black-fathers"
+             style="background-image: url('images/archive-1.jpg');"></div>
+        <div class="ph-archive__item" data-cat="portraits"
+             style="background-image: url('images/archive-2.jpg');"></div>
+        <div class="ph-archive__item" data-cat="real-estate"
+             style="background-image: url('images/archive-3.jpg');"></div>
+        <div class="ph-archive__item" data-cat="street"
+             style="background-image: url('images/archive-4.jpg');"></div>
+        <div class="ph-archive__item" data-cat="community"
+             style="background-image: url('images/archive-5.jpg');"></div>
+        <div class="ph-archive__item" data-cat="travel"
+             style="background-image: url('images/archive-6.jpg');"></div>
       </div>
-      <div class="photo-stat">
-        <p class="photo-stat__num">15+</p>
-        <p class="photo-stat__label">Countries Visited</p>
-      </div>
-      <div class="photo-stat">
-        <p class="photo-stat__num">5+</p>
-        <p class="photo-stat__label">Years Active</p>
-      </div>
-      <div class="photo-stat">
-        <p class="photo-stat__num">∞</p>
-        <p class="photo-stat__label">Stories Told</p>
+      <div class="ph-archive__load">
+        <button class="ph-archive__load-btn" id="loadMoreBtn">Load More Projects →</button>
       </div>
     </div>
-  </div>
-  <!-- END STATS STRIP -->
+
+  </section>
+  <!-- END PROJECT ARCHIVE -->
 
   <!-- ══════════════════════════════════════════
-       GALLERY — REAL ESTATE
+       ABOUT MY PHOTOGRAPHY
   ══════════════════════════════════════════ -->
-  <section class="photo-gallery">
-    <div class="container">
-      <span class="label label--muted" style="margin-bottom:0.5rem;">Real Estate</span>
-      <h2 class="photo-gallery__title">Property Portfolio</h2>
-      <p class="photo-gallery__sub">Interior, exterior, and architectural photography across New York.</p>
-
-      <div class="photo-gallery__grid">
-        <div class="photo-gallery__item">
-          <img src="images/re-1.jpg" alt="Real estate interior 1" loading="lazy" />
-          <div class="photo-gallery__item-overlay">
-            <span class="photo-gallery__item-label">Brooklyn, NY</span>
-          </div>
-        </div>
-        <div class="photo-gallery__item">
-          <img src="images/re-2.jpg" alt="Real estate interior 2" loading="lazy" />
-          <div class="photo-gallery__item-overlay">
-            <span class="photo-gallery__item-label">Manhattan, NY</span>
-          </div>
-        </div>
-        <div class="photo-gallery__item">
-          <img src="images/re-3.jpg" alt="Real estate interior 3" loading="lazy" />
-          <div class="photo-gallery__item-overlay">
-            <span class="photo-gallery__item-label">Queens, NY</span>
-          </div>
-        </div>
-        <div class="photo-gallery__item">
-          <img src="images/re-4.jpg" alt="Real estate exterior 1" loading="lazy" />
-          <div class="photo-gallery__item-overlay">
-            <span class="photo-gallery__item-label">Prospect Heights</span>
-          </div>
-        </div>
-        <div class="photo-gallery__item">
-          <img src="images/re-5.jpg" alt="Real estate exterior 2" loading="lazy" />
-          <div class="photo-gallery__item-overlay">
-            <span class="photo-gallery__item-label">Bed-Stuy</span>
-          </div>
-        </div>
-        <div class="photo-gallery__item">
-          <img src="images/re-6.jpg" alt="Real estate floor plan" loading="lazy" />
-          <div class="photo-gallery__item-overlay">
-            <span class="photo-gallery__item-label">Crown Heights</span>
-          </div>
-        </div>
-      </div>
+  <section class="ph-about">
+    <div class="ph-about__img"></div>
+    <div class="ph-about__text">
+      <p class="ph-about__eyebrow">About My Photography</p>
+      <h2 class="ph-about__headline">Photography is how I connect.</h2>
+      <p class="ph-about__body">
+        It allows me to slow down, observe, and document the stories
+        that often go unseen. My goal is to create honest images
+        that hold meaning long after the moment has passed.
+      </p>
+      <a href="about.html" class="ph-about__cta">Learn More About My Approach →</a>
     </div>
   </section>
-  <!-- END GALLERY — REAL ESTATE -->
-
-  <!-- ══════════════════════════════════════════
-       GALLERY — TRAVEL
-  ══════════════════════════════════════════ -->
-  <section class="photo-gallery" style="background: var(--offwhite); padding-top: 0;">
-    <div class="container">
-      <span class="label label--muted" style="margin-bottom:0.5rem;">Travel</span>
-      <h2 class="photo-gallery__title">Through the Lens</h2>
-      <p class="photo-gallery__sub">One lens. Unfiltered moments abroad.</p>
-
-      <div class="photo-gallery__grid">
-        <div class="photo-gallery__item">
-          <img src="images/travel-1.jpg" alt="Dubai" loading="lazy" />
-          <div class="photo-gallery__item-overlay">
-            <span class="photo-gallery__item-label">Dubai, UAE</span>
-          </div>
-        </div>
-        <div class="photo-gallery__item">
-          <img src="images/travel-2.jpg" alt="London" loading="lazy" />
-          <div class="photo-gallery__item-overlay">
-            <span class="photo-gallery__item-label">London, UK</span>
-          </div>
-        </div>
-        <div class="photo-gallery__item">
-          <img src="images/travel-3.jpg" alt="Istanbul" loading="lazy" />
-          <div class="photo-gallery__item-overlay">
-            <span class="photo-gallery__item-label">Istanbul, TR</span>
-          </div>
-        </div>
-        <div class="photo-gallery__item">
-          <img src="images/travel-4.jpg" alt="Morocco" loading="lazy" />
-          <div class="photo-gallery__item-overlay">
-            <span class="photo-gallery__item-label">Morocco</span>
-          </div>
-        </div>
-        <div class="photo-gallery__item">
-          <img src="images/travel-5.jpg" alt="Cairo" loading="lazy" />
-          <div class="photo-gallery__item-overlay">
-            <span class="photo-gallery__item-label">Cairo, EG</span>
-          </div>
-        </div>
-        <div class="photo-gallery__item">
-          <img src="images/travel-6.jpg" alt="Brooklyn" loading="lazy" />
-          <div class="photo-gallery__item-overlay">
-            <span class="photo-gallery__item-label">Brooklyn, NY</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- END GALLERY — TRAVEL -->
-
-  <!-- ══════════════════════════════════════════
-       CTA
-  ══════════════════════════════════════════ -->
-  <section class="section section--dark" style="text-align:center;">
-    <span class="label" style="margin-bottom:1rem;">Ready to Work Together?</span>
-    <h2 style="font-family:var(--f-body);font-size:clamp(1.8rem,4vw,3rem);font-weight:700;color:var(--white);margin-bottom:1rem;">
-      Let's capture your property.
-    </h2>
-    <p style="font-family:var(--f-body);font-size:0.95rem;font-weight:300;color:rgba(255,255,255,0.6);max-width:420px;margin:0 auto 2rem;line-height:1.7;">
-      Professional real estate photography that helps listings stand out and sell faster.
-    </p>
-    <a href="index.html#contact" class="btn btn--white">Book a Shoot →</a>
-  </section>
-  <!-- END CTA -->
+  <!-- END ABOUT MY PHOTOGRAPHY -->
 
   <!-- ══════════════════════════════════════════
        FOOTER
   ══════════════════════════════════════════ -->
-  <footer class="footer">
-    <div class="footer__top">
+  <footer class="ph-footer">
+    <div class="ph-footer__top">
       <div>
-        <a href="index.html#home" class="footer__logo">HAMZA <span>AM</span></a>
-        <p class="footer__desc">Entrepreneur. Real Estate Agent.<br>Cybersecurity Consultant. Author.<br>Photographer.</p>
-        <p class="footer__location">📍 Brooklyn, NY</p>
+        <a href="index.html#home" class="ph-footer__logo">HAMZA <span>AM</span></a>
+        <p class="ph-footer__desc">Technologist. Real Estate Agent.<br>Photographer. Educator. Author.<br>Problem Solver.</p>
+        <p class="ph-footer__location">📍 Brooklyn, NY</p>
       </div>
       <div>
-        <p class="footer__col-title">Companies</p>
-        <ul class="footer__links">
-          <li><a href="https://realty.hamzaam.com" target="_blank" rel="noopener">Realty <span>→</span></a></li>
-          <li><a href="index.html#companies">P² Cyber Solutions <span>→</span></a></li>
-          <li><a href="https://shop.hamzaam.com" target="_blank" rel="noopener">Statements <span>→</span></a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="footer__col-title">Quick Links</p>
-        <ul class="footer__links">
-          <li><a href="about.html">About</a></li>
+        <p class="ph-footer__col-title">Navigate</p>
+        <ul class="ph-footer__links">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#companies">Companies</a></li>
+          <li><a href="index.html#work">Work</a></li>
           <li><a href="photography.html">Photography</a></li>
-          <li><a href="index.html#work">Projects</a></li>
+          <li><a href="about.html">About</a></li>
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </div>
       <div>
-        <p class="footer__col-title">Connect</p>
-        <ul class="footer__social">
-          <li><a href="YOUR-INSTAGRAM-URL" target="_blank" rel="noopener"><span class="footer__social-icon">IG</span> Instagram</a></li>
-          <li><a href="YOUR-LINKEDIN-URL" target="_blank" rel="noopener"><span class="footer__social-icon">in</span> LinkedIn</a></li>
-          <li><a href="mailto:YOUR-EMAIL"><span class="footer__social-icon">@</span> Email</a></li>
+        <p class="ph-footer__col-title">Photography</p>
+        <ul class="ph-footer__links">
+          <li><a href="#ph-archive">All Projects</a></li>
+          <li><a href="https://www.npr.org/sections/pictureshow/2022/06/18/1104283210/hamza-abdul-mumit-black-fathers-matter" target="_blank" rel="noopener">Black Fathers Matter</a></li>
+          <li><a href="#ph-archive">Real Estate</a></li>
+          <li><a href="#ph-archive">Travel</a></li>
+          <li><a href="#ph-archive">Portraits</a></li>
         </ul>
       </div>
       <div>
-        <p class="footer__nl-title">Stay Connected</p>
-        <p class="footer__nl-desc">Get updates on new projects, listings, drops and insights.</p>
-        <form class="footer__form" onsubmit="return false;">
-          <input type="email" placeholder="Enter your email" aria-label="Email" />
-          <button type="submit">→</button>
-        </form>
+        <p class="ph-footer__col-title">Let's Connect</p>
+        <p class="ph-footer__cta-label">Interested in working together?</p>
+        <a href="index.html#contact" class="ph-footer__cta-btn">Get in Touch →</a>
       </div>
     </div>
-    <div class="footer__bottom">
-      <p class="footer__copy">© 2024 Hamza AM. All Rights Reserved.</p>
-      <p class="footer__copy">Brooklyn, NY</p>
+    <div class="ph-footer__bottom">
+      <p class="ph-footer__copy">© 2026 Hamza AM. All rights reserved.</p>
+      <p class="ph-footer__copy">Built with purpose.</p>
     </div>
   </footer>
   <!-- END FOOTER -->
 
   <script src="js/main.js"></script>
+  <script>
+    // ── ARCHIVE CATEGORY FILTER ──
+    const catBtns = document.querySelectorAll('#archiveCats button');
+    const archiveItems = document.querySelectorAll('#archiveGrid .ph-archive__item');
+
+    catBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        catBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const cat = btn.dataset.cat;
+        archiveItems.forEach(item => {
+          if (cat === 'all' || item.dataset.cat === cat) {
+            item.style.display = '';
+            item.style.opacity = '0';
+            requestAnimationFrame(() => {
+              item.style.transition = 'opacity 0.4s ease';
+              item.style.opacity = '1';
+            });
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // ── LOAD MORE (placeholder) ──
+    document.getElementById('loadMoreBtn').addEventListener('click', function() {
+      this.textContent = 'All Projects Loaded';
+      this.disabled = true;
+      this.style.opacity = '0.4';
+    });
+
+    // ── HERO PARALLAX ──
+    const heroBg = document.getElementById('phHeroBg');
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY;
+      if (heroBg && scrolled < window.innerHeight) {
+        heroBg.style.transform = `scale(1.03) translateY(${scrolled * 0.25}px)`;
+      }
+    }, { passive: true });
+  </script>
 </body>
 </html>
