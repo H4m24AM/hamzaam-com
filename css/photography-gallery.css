@@ -1,0 +1,13 @@
+/* Gallery and real estate links use the site's shared type and color tokens. */
+.ph-hero__actions .ph-hero__primary{font-size:1rem;font-weight:700;padding:1.1rem 1.5rem;background:var(--gold);color:var(--black);border-color:var(--gold)}
+.ph-proj-card--real-estate .ph-proj-card__cta{display:inline-block;background:var(--gold);color:var(--black);font-family:var(--f-body);font-size:.9rem;font-weight:700;padding:.9rem 1.2rem;letter-spacing:0;text-transform:none}
+.ph-proj-card--real-estate:hover .ph-proj-card__cta{background:var(--offwhite);color:var(--black)}
+button.ph-archive__item{width:100%;border:0;cursor:zoom-in}
+button.ph-archive__item:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+.ph-lightbox{position:fixed;inset:0;width:calc(100% - 2rem);max-width:1400px;max-height:calc(100dvh - 2rem);margin:auto;padding:3.5rem 1rem 1rem;background:var(--black);color:var(--offwhite);border:1px solid #444}
+.ph-lightbox::backdrop{background:rgba(0,0,0,.9)}
+.ph-lightbox__close{position:absolute;right:1rem;top:1rem;background:transparent;color:var(--offwhite);border:0;font-family:var(--f-body);font-size:1rem;padding:.3rem}
+.ph-lightbox__close:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.ph-lightbox figure{margin:0}.ph-lightbox img{width:100%;height:auto;max-height:calc(100dvh - 9rem);object-fit:contain}
+.ph-lightbox figcaption{text-align:center;font-family:var(--f-body);font-size:.9rem;color:#bbb;margin-top:1rem}
+body.ph-lightbox-open{overflow:hidden}
