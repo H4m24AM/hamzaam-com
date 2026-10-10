@@ -120,3 +120,11 @@ All colors and fonts are defined as CSS variables in `css/style.css` under `:roo
 | `--offwhite` | `#F8F6F2` | Card backgrounds |
 
 **Fonts:** Barlow Condensed · DM Sans · Playfair Display · Space Mono (loaded from Google Fonts in `style.css`)
+
+## Real Estate Photography portfolio
+
+The static directory route at /photography/real-estate/ contains a two-column portfolio and four individual project galleries. Directory index hosting serves the requested /photography/real-estate path without a framework or build step. All assets and navigation use root-relative paths.
+
+These are clearly labeled sample projects, with local architectural SVG illustrations instead of unverified property photos. Replace sample names, locations, images, alt text, and captions in the five HTML pages with approved content. Keep real gallery images at their natural proportions (remove the portrait modifier when appropriate). No category filters are included for this small preview collection. Inquiries use the existing admin@hamza.am address and link to the homepage contact section.
+
+Validate locally with a static server that supports directory indexes. Check desktop and mobile grids, each project and previous/next navigation, keyboard focus, the mobile menu and Escape, and inquiry links before merging.
