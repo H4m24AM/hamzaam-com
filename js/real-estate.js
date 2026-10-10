@@ -1,5 +1,7 @@
 // Keep the shared mobile menu's accessibility state in sync.
 document.addEventListener('DOMContentLoaded', function () {
+  var count = document.querySelector('[data-project-count]');
+  if (count) { count.textContent = document.querySelectorAll('.re-projects > .re-card').length + ' projects'; }
   var nav = document.getElementById('mainNav');
   var toggle = document.getElementById('navToggle');
   function syncMenu() { toggle.setAttribute('aria-expanded', String(nav.classList.contains('open'))); }
