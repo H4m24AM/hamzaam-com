@@ -25,12 +25,21 @@
 .re-page--portfolio .re-card .re-eyebrow{font-size:.62rem}
 .re-page--portfolio .re-inquiry h2{font-family:var(--f-serif);font-size:clamp(1.8rem,3vw,2.8rem)}
 
-/* Pricing uses the portfolio's shared fonts, colors, and restrained dividers. */
-.re-pricing{margin-top:4rem;scroll-margin-top:6rem}.re-pricing-jump{margin-top:1.25rem}
-.re-pricing-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem;margin-bottom:2rem}
-.re-price-card{border-top:1px solid #333;padding-top:1.5rem}.re-price-card h3{font-family:var(--f-serif);font-weight:400;font-size:1.45rem;margin-bottom:1.5rem}
-.re-price-card dl>div{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-top:1rem}
-.re-price-card dt{font-family:var(--f-body);font-size:.9rem;color:#bbb;line-height:1.6}.re-price-card dd{font-family:var(--f-body);font-size:1.1rem;font-weight:700;white-space:nowrap}
-.re-price-addon{display:flex;justify-content:space-between;align-items:center;gap:1rem;border-top:1px solid #333;padding:1.5rem 0;font-family:var(--f-body);font-size:1rem}
-.re-price-addon small{display:block;font-size:.85rem;color:#bbb;margin-top:.5rem}.re-price-addon strong{font-size:1.1rem;white-space:nowrap}
-@media(max-width:900px){.re-pricing-grid{grid-template-columns:1fr;gap:1.5rem}.re-pricing{margin-top:3rem}}
+/* One vertical pricing chart with a shared right-aligned price column. */
+.re-pricing{margin:4rem auto 0;max-width:900px;scroll-margin-top:6rem;background:#fff;color:#0d0d0d;padding:clamp(1.5rem,4vw,3rem)}
+.re-pricing-jump{margin-top:1.25rem}
+.re-pricing .re-section-heading{border:0;padding:0;display:block}
+.re-pricing .re-section-heading h2{font-family:var(--f-serif);font-size:clamp(2rem,4vw,3rem);font-weight:700;letter-spacing:-.025em;text-transform:none;line-height:1.2}
+.re-page--portfolio .re-pricing .re-note{color:#333;margin:1rem 0 2rem;max-width:100%}
+.re-pricing-grid{display:grid;grid-template-columns:1fr;gap:0}
+.re-price-card{border-top:1px solid #d6d6d6;padding:1.5rem 0}
+.re-price-card h3{font-family:var(--f-serif);font-size:1.45rem;font-weight:400;margin-bottom:1rem}
+.re-price-card dl>div{display:grid;grid-template-columns:minmax(0,1fr) 6rem;align-items:baseline;gap:1rem;margin-top:.8rem}
+.re-price-card dt{font-family:var(--f-body);font-size:1rem;color:#222;line-height:1.6}
+.re-price-card dd{font-family:var(--f-body);font-size:1.2rem;font-weight:700;white-space:nowrap;text-align:right}
+.re-price-addon{display:grid;grid-template-columns:minmax(0,1fr) 6rem;align-items:center;gap:1rem;border-top:1px solid #d6d6d6;padding:1.5rem 0;font-family:var(--f-body);font-size:1rem}
+.re-price-addon small{display:block;font-size:.85rem;color:#444;margin-top:.5rem}
+.re-price-addon strong{font-size:1.2rem;white-space:nowrap;text-align:right}
+.re-pricing .re-link{color:#0d0d0d;border-color:#0d0d0d;font-size:.9rem}
+.re-pricing .re-link:hover{color:#555;border-color:#555}
+@media(max-width:700px){.re-pricing{margin-top:3rem}.re-price-card dl>div,.re-price-addon{grid-template-columns:minmax(0,1fr) 4.5rem;gap:.75rem}}
