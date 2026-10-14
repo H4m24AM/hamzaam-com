@@ -405,6 +405,22 @@
     }
   </style>
 <link rel="stylesheet" href="/css/photography-gallery.css">
+  <style>
+    .ph-hover-preview {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(13, 13, 13, 0.96);
+      pointer-events: none;
+      padding: 1rem;
+    }
+    .ph-hover-preview[hidden] { display: none; }
+    .ph-hover-preview img { width: 100%; height: 100%; object-fit: contain; }
+    @media (hover: hover) and (pointer: fine) {
+      .ph-proj-card:not(.ph-proj-card--real-estate) .ph-proj-card__img,
+      .ph-about__img { cursor: zoom-in; }
+    }
+  </style>
 </head>
 <body>
 
@@ -568,6 +584,7 @@
   <!-- END FOOTER -->
 
 <script src="js/main.js"></script>
+<script src="/js/photography-hover.js"></script>
   <script>
     // ── HERO PARALLAX ──
     const heroBg = document.getElementById('phHeroBg');
