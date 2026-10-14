@@ -13,6 +13,25 @@ document.addEventListener('DOMContentLoaded', function () {
   var nav    = document.getElementById('mainNav');
   var toggle = document.getElementById('navToggle');
 
+  // Shared photography submenu on every page using the main navigation.
+  if (nav) {
+    var photographyLink = Array.from(nav.querySelectorAll('.nav__links > li > a'))
+      .find(function (link) { return link.textContent.trim() === 'Photography'; });
+    if (photographyLink) {
+      var photographyItem = photographyLink.parentElement;
+      photographyItem.classList.add('nav__dropdown');
+      var submenu = document.createElement('ul');
+      submenu.className = 'nav__submenu';
+      var submenuItem = document.createElement('li');
+      var realEstateLink = document.createElement('a');
+      realEstateLink.href = '/photography/real-estate/';
+      realEstateLink.textContent = 'Real Estate Photography';
+      submenuItem.appendChild(realEstateLink);
+      submenu.appendChild(submenuItem);
+      photographyItem.appendChild(submenu);
+    }
+  }
+
   if (toggle && nav) {
     toggle.addEventListener('click', function () {
       nav.classList.toggle('open');
