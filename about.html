@@ -7,10 +7,24 @@
   <meta name="description" content="Brooklyn-based entrepreneur, real estate agent, cybersecurity consultant, author, and photographer." />
   <link rel="stylesheet" href="css/style.css" />
   <style>
-    .about-bio--revised { display: block; max-width: 850px; padding: clamp(3rem, 6vw, 5rem) 2rem; }
+    .about-hero { min-height: clamp(480px, 48vw, 680px); align-items: center; padding: 4rem 2rem; }
+    .about-hero__bg { background-image: url('images/about-half-face.png'); background-size: auto 135%; background-position: right center; background-repeat: no-repeat; opacity: 1; }
+    .about-hero__overlay { background: linear-gradient(90deg, #0d0d0d 0%, #0d0d0d 48%, rgba(13,13,13,.94) 62%, rgba(13,13,13,.35) 80%, rgba(13,13,13,.05) 100%); }
+    .about-hero__title { font-size: clamp(3rem, 7vw, 6rem); line-height: 1.02; letter-spacing: -.035em; }
+    .about-bio--revised { display: block; max-width: 850px; padding: clamp(3rem, 5vw, 4.5rem) 2rem 0; }
+    .about-bio--revised .about-bio__body { font-size: clamp(1.1rem, 2.1vw, 1.6rem); line-height: 1.5; margin-bottom: 1.5rem; }
     .about-bio--revised .about-bio__body:last-child { margin-bottom: 0; }
-    .about-statement { background: var(--offwhite); padding: clamp(4rem, 9vw, 8rem) 2rem; text-align: center; }
-    .about-statement h2 { max-width: 1000px; margin: 0 auto; font-family: var(--f-body); font-size: clamp(1.8rem, 4vw, 3.5rem); font-weight: 700; line-height: 1.2; letter-spacing: -.025em; color: var(--black); }
+    .about-statement { max-width: 850px; margin: 0 auto; padding: 2.5rem 2rem clamp(3rem, 6vw, 5rem); }
+    .about-statement h2 { border-top: 1px solid var(--gold); padding-top: 2rem; font-family: var(--f-body); font-size: clamp(1.8rem, 3.5vw, 3rem); font-weight: 700; line-height: 1.2; letter-spacing: -.025em; color: var(--black); }
+    .about-statement h2 span { display: block; color: var(--gold); }
+    @media(max-width:700px) {
+      .about-hero { min-height: 470px; padding: 3rem 1.25rem; }
+      .about-hero__bg { background-size: auto 110%; background-position: right center; }
+      .about-hero__overlay { background: linear-gradient(90deg, #0d0d0d 0%, rgba(13,13,13,.95) 35%, rgba(13,13,13,.65) 65%, rgba(13,13,13,.2) 100%); }
+      .about-hero__title { font-size: clamp(2.7rem, 9vw, 4rem); }
+      .about-bio--revised { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .about-statement { padding-left: 1.5rem; padding-right: 1.5rem; }
+    }
   </style>
 </head>
 <body>
@@ -51,7 +65,7 @@
     <div class="about-hero__content container">
       <span class="label" style="margin-bottom:1rem;">About Hamza</span>
       <h1 class="about-hero__title">
-        Builder. Creator.<br><em>Integrator.</em>
+        Builder.<br>Creator.<br><em>Integrator.</em>
       </h1>
     </div>
   </section>
@@ -66,7 +80,7 @@
   </section>
 
   <section class="about-statement" aria-labelledby="statement-title">
-    <h2 id="statement-title">Life is never just one thing. Neither am I.</h2>
+    <h2 id="statement-title">Life is never just one thing. <span>Neither am I.</span></h2>
   </section>
 
   <!-- ══════════════════════════════════════════
