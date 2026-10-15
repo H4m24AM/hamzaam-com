@@ -6,6 +6,12 @@
   <title>About — Hamza AM</title>
   <meta name="description" content="Brooklyn-based entrepreneur, real estate agent, cybersecurity consultant, author, and photographer." />
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .about-bio--revised { display: block; max-width: 850px; padding: clamp(3rem, 6vw, 5rem) 2rem; }
+    .about-bio--revised .about-bio__body:last-child { margin-bottom: 0; }
+    .about-statement { background: var(--offwhite); padding: clamp(4rem, 9vw, 8rem) 2rem; text-align: center; }
+    .about-statement h2 { max-width: 1000px; margin: 0 auto; font-family: var(--f-body); font-size: clamp(1.8rem, 4vw, 3.5rem); font-weight: 700; line-height: 1.2; letter-spacing: -.025em; color: var(--black); }
+  </style>
 </head>
 <body>
 
@@ -51,95 +57,17 @@
   </section>
   <!-- END ABOUT HERO -->
 
-  <!-- ══════════════════════════════════════════
-       ABOUT BIO
-  ══════════════════════════════════════════ -->
-  <div class="about-bio container">
-    <div class="about-bio__img"></div>
+  <section class="about-bio container about-bio--revised" aria-labelledby="who-title">
     <div class="about-bio__text">
-      <span class="label">Who I Am</span>
-      <h2 class="about-bio__name">
-        Hamza Abdul-Mumit.
-      </h2>
-      <h3 class="about-bio__tagline">
-    	  Brooklyn Built.
-      </h3>
-
-	</p>
-      <p class="about-bio__body">
-        I don't believe expertise has to be confined to a single field. Some people master one discipline. I 	enjoy understanding how disciplines intersect.
-      </p>
-      <p class="about-bio__body">
-        My work spans real estate, cybersecurity, photography, publishing, and apparel. While each serves a 	different purpose, they're united by the same principles: curiosity, discipline, service, and faith.
-      </p>
-      <p class="about-bio__body">
-	Different domains. One philosophy.      </p>
-      <a href="index.html#contact" class="btn btn--black" style="margin-top:1.8rem;">Get In Touch →</a>
-    </div>
-  </div>
-  <!-- END ABOUT BIO -->
-
-  <!-- ══════════════════════════════════════════
-       DISCIPLINES
-  ══════════════════════════════════════════ -->
-  <section class="about-disciplines">
-    <span class="label label--muted">What I Do</span>
-    <h2 class="about-disciplines__title">Five disciplines. One vision.</h2>
-    <span class="gold-rule"></span>
-    <br><br>
-    <div class="about-disciplines__grid">
-      <div class="about-disc-item">
-        <div class="about-disc-item__icon">🏠</div>
-        <p class="about-disc-item__name">Real Estate</p>
-      </div>
-      <div class="about-disc-item">
-        <div class="about-disc-item__icon">🔒</div>
-        <p class="about-disc-item__name">Cybersecurity</p>
-      </div>
-      <div class="about-disc-item">
-        <div class="about-disc-item__icon">👕</div>
-        <p class="about-disc-item__name">Apparel</p>
-      </div>
-      <div class="about-disc-item">
-        <div class="about-disc-item__icon">📷</div>
-        <p class="about-disc-item__name">Photography</p>
-      </div>
-      <div class="about-disc-item">
-        <div class="about-disc-item__icon">✍️</div>
-        <p class="about-disc-item__name">Author</p>
-      </div>
+      <h2 class="label" id="who-title">WHO I AM</h2>
+      <p class="about-bio__body">I'm a Brooklyn native whose interests and experiences have taken me well beyond the borough.</p>
+      <p class="about-bio__body">I've worked across education, technology, real estate, photography, and business. I've lived abroad, authored two books, and spent much of my life studying people, cultures, and ideas.</p>
     </div>
   </section>
-  <!-- END DISCIPLINES -->
 
-  <!-- ══════════════════════════════════════════
-       VALUES STRIP
-  ══════════════════════════════════════════ -->
-  <section class="values">
-    <div class="values__grid">
-      <div class="values__item">
-        <div class="values__icon">♟</div>
-        <p class="values__name">Strategic Mindset</p>
-        <p class="values__desc">Every decision is intentional.</p>
-      </div>
-      <div class="values__item">
-        <div class="values__icon">⚡</div>
-        <p class="values__name">Relentless Execution</p>
-        <p class="values__desc">Ideas mean nothing without action.</p>
-      </div>
-      <div class="values__item">
-        <div class="values__icon">◎</div>
-        <p class="values__name">Community Focused</p>
-        <p class="values__desc">Success is better when shared.</p>
-      </div>
-      <div class="values__item">
-        <div class="values__icon">✦</div>
-        <p class="values__name">Faith Driven</p>
-        <p class="values__desc">Purpose guides everything.</p>
-      </div>
-    </div>
+  <section class="about-statement" aria-labelledby="statement-title">
+    <h2 id="statement-title">Life is never just one thing. Neither am I.</h2>
   </section>
-  <!-- END VALUES STRIP -->
 
   <!-- ══════════════════════════════════════════
        FOOTER
