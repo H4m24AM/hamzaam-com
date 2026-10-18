@@ -20,7 +20,7 @@ class CollectionBuildTests(unittest.TestCase):
         for folder in ('templates', 'css', 'js', 'images', 'photography/real-estate/example'):
             (self.root / folder).mkdir(parents=True)
         (self.root / 'templates/collection.html').write_text(builder.read_text(MODULE.parents[1] / 'templates/collection.html'), encoding='utf-8')
-        (self.root / 'index.html').write_text('<footer class="footer"><a href="about.html">About</a></footer>')
+        (self.root / 'index.html').write_text('<footer class="footer"><a href="about.html">About</a><a href="#contact">Contact</a></footer>')
         (self.root / 'photography.html').write_text('<nav class="nav"><a href="photography.html">Photography</a></nav>Black Fathers Matter Real Estate<!-- COLLECTION_FEATURES --><!-- COLLECTION_ARCHIVE -->')
         (self.root / 'photography/real-estate/example/index.html').write_bytes(b'existing gallery preserved')
         self.folder = self.root / 'content/photography/collections/example'
@@ -74,6 +74,7 @@ class CollectionBuildTests(unittest.TestCase):
         (other/'collection.json').write_text(json.dumps({'title':'Second','description':'Next','published':True}))
         Image.new('RGB',(20,20)).save(other/'1.jpg')
         out=self.build();first=(out/'photography/collections/example/index.html').read_text(encoding="utf-8")
+        self.assertIn('href="/index.html#contact"',first)
         self.assertIn('Next collection',first);self.assertNotIn('Previous collection',first)
         self.assertIn('Previous collection',(out/'photography/collections/second/index.html').read_text(encoding="utf-8"))
         self.assertIn('Second',(out/'photography/collections/index.html').read_text(encoding="utf-8"))
