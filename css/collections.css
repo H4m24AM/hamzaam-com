@@ -1,0 +1,16 @@
+/* Editorial collections use the shared Hamza.AM design tokens. */
+.collection-page{background:var(--dark);color:var(--offwhite)}
+.collection-page a{color:inherit}.collection-page a:focus-visible,.collection-page button:focus-visible{outline:2px solid var(--gold);outline-offset:5px}
+.collection-page .nav{background:var(--black)}.collection-page .nav__logo,.collection-page .nav__links a{color:var(--offwhite)}.collection-page .nav__toggle span{background:var(--offwhite)}.collection-page .nav.open .nav__links{background:var(--black)}.collection-page .nav__cta{background:var(--offwhite);color:var(--black)}
+.collection-container{max-width:1280px;margin:auto;padding:0 clamp(1.25rem,5vw,4rem)}
+.collection-intro{padding:3rem 0 4rem;max-width:900px}.collection-back,.collection-nav a{display:inline-block;font-family:var(--f-body);font-size:.85rem;color:#bbb!important}.collection-back{margin-bottom:3rem}
+.collection-category{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#bbb;margin-bottom:1rem}
+.collection-intro h1{font-family:var(--f-body);font-size:clamp(2.5rem,6vw,5rem);font-weight:300;line-height:1.1;letter-spacing:-.035em}
+.collection-description,.collection-subtitle{font-size:1rem;line-height:1.8;color:#c6c6c6;max-width:750px;margin-top:1.5rem}.collection-meta{font-size:.85rem;color:#aaa;margin-top:1rem}
+.collection-gallery{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(3rem,7vw,6rem)}.collection-photo{margin:0;min-width:0}.collection-photo img{display:block;width:100%;height:auto}.collection-photo figcaption{margin-top:1rem;max-width:800px;font-family:var(--f-body);font-size:.85rem;line-height:1.8;color:#aaa}.collection-photo figcaption strong{display:block;color:var(--offwhite);font-weight:500}.collection-photo figcaption p{margin-top:.25rem}
+.collection-nav{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;margin:4rem 0;padding:1.5rem 0;border-top:1px solid #333}.collection-nav span{display:block;color:var(--offwhite);margin-top:.5rem}
+.collection-index-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3rem 2rem;padding-bottom:4rem}.collection-card{display:block;min-width:0}.collection-card img{width:100%;height:auto;display:block}.collection-card h2,.collection-card h3{font-family:var(--f-body);font-size:1.3rem;font-weight:400;margin:1rem 0 .5rem}.collection-card p{font-family:var(--f-mono);font-size:.65rem;text-transform:uppercase;letter-spacing:.08em;color:#aaa}
+.collection-page .footer{margin-top:0}.collection-skip{position:fixed;top:-100px;left:1rem;background:var(--black);padding:1rem;z-index:3000}.collection-skip:focus{top:1rem}
+.collection-draft{padding:1.25rem;border:1px solid #555;color:#ccc;line-height:1.8;margin-bottom:3rem}
+.ph-collection-card img{width:100%;height:auto;display:block}.ph-collection-card:focus-visible{outline:2px solid var(--gold);outline-offset:5px}.ph-collection-card .ph-proj-card__meta{margin-top:1rem}
+@media(max-width:700px){.collection-intro{padding:2rem 0 3rem}.collection-index-grid{grid-template-columns:1fr}.collection-back{margin-bottom:2rem}}

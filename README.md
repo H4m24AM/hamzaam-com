@@ -1,6 +1,6 @@
 # Hamza AM — Website Source Code
 
-Pure HTML / CSS / JavaScript. No build step required. Push to GitHub, deploy anywhere.
+Static HTML / CSS / JavaScript with a Python build step for folder-managed photography collections. See [collection instructions](content/photography/README.md).
 
 ---
 
@@ -51,8 +51,8 @@ On `about.html` and `photography.html`, nav links point back to `index.html#sect
 1. Push this folder to a GitHub repo
 2. Go to [pages.cloudflare.com](https://pages.cloudflare.com) → Create a project → Connect to Git
 3. Build settings:
-   - **Build command:** *(leave blank — no build needed)*
-   - **Build output directory:** `/` (root)
+   - **Build command:** `python -m pip install -r requirements.txt && python scripts/build_collections.py`
+   - **Build output directory:** `dist` (set `PYTHON_VERSION=3.12`)
 4. Click **Save and Deploy**
 5. Connect `hamzaam.com` under **Custom Domains**
 
@@ -128,3 +128,7 @@ The static directory route at /photography/real-estate/ contains a two-column po
 These are clearly labeled sample projects, with local architectural SVG illustrations instead of unverified property photos. Replace sample names, locations, images, alt text, and captions in the five HTML pages with approved content. Keep real gallery images at their natural proportions (remove the portrait modifier when appropriate). No category filters are included for this small preview collection. Inquiries use the existing admin@hamza.am address and link to the homepage contact section.
 
 Validate locally with a static server that supports directory indexes. Check desktop and mobile grids, each project and previous/next navigation, keyboard focus, the mobile menu and Escape, and inquiry links before merging.
+
+## Photography collections
+
+Collection photos and optional metadata live under `content/photography/collections/<slug>/`. The build discovers photos, creates optimized public variants, generates pages and indexes, and adds featured published collections to Photography. See [the complete guide](content/photography/README.md) for local previews and the required one-time Cloudflare build-setting change. Do not deploy the source root or `preview-dist`.

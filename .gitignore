@@ -2,3 +2,10 @@
 Thumbs.db
 *.swp
 *.swo
+
+dist/
+preview-dist/
+.collection-build-*/
+__pycache__/
+
+.collection-test-*/
