@@ -234,6 +234,9 @@ def generate(root, output, preview):
         archive = ('<h2 class="ph-archive__title" id="archive-title">Coming soon.</h2>'
                    '<p class="ph-archive__message">I’m preparing more of my photography to share here. Explore the featured projects above while the full collection takes shape.</p>')
     source = source.replace('<!-- COLLECTION_ARCHIVE -->', archive)
+    source = source.replace('<!-- COLLECTION_FOOTER -->', ''.join(
+        f'<li><a href="/photography/collections/{c["slug"]}/">{esc(c["title"])}</a></li>'
+        for c in published))
     (output / 'photography.html').write_text(source, encoding='utf-8')
     return len(published), len(collections)
 
