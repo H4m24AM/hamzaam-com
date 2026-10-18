@@ -40,7 +40,9 @@ def shared(root):
     footer = re.search(r'<footer class="footer".*?</footer>', home, re.S).group()
     def absolute(match):
         attr, url = match.groups()
-        if not url.startswith(('/', '#', 'https:', 'http:', 'mailto:', 'tel:')):
+        if url.startswith('#'):
+            url = '/index.html' + url
+        elif not url.startswith(('/', 'https:', 'http:', 'mailto:', 'tel:')):
             url = '/' + url
         return f'{attr}="{url}"'
     return tuple(re.sub(r'(href|src)="([^"]+)"', absolute, block)
