@@ -4,7 +4,7 @@
   "location": "Brooklyn, New York",
   "description": "Photographed at a Black Lives Matter protest outside Barclays Center and an Eid prayer at Masjid At-Taqwa, these images document moments of Muslim life in Brooklyn. Across public demonstration and communal worship, they observe expressions of faith, individuality, and belonging.",
   "featured": true,
-  "published": false,
+  "published": true,
   "coverImage": "03-child.jpg",
   "images": {
     "01-muadhin.jpg": {"title": "The Muadhin", "location": "Barclays Center, Brooklyn", "description": "Black Lives Matter protest"},
