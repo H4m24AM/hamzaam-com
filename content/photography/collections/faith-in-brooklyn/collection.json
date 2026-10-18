@@ -1,0 +1,14 @@
+{
+  "title": "Faith in Brooklyn",
+  "category": "Documentary / Culture",
+  "location": "Brooklyn, New York",
+  "description": "Photographed at a Black Lives Matter protest outside Barclays Center and an Eid prayer at Masjid At-Taqwa, these images document moments of Muslim life in Brooklyn. Across public demonstration and communal worship, they observe expressions of faith, individuality, and belonging.",
+  "featured": true,
+  "published": false,
+  "coverImage": "03-child.jpg",
+  "images": {
+    "01-muadhin.jpg": {"title": "The Muadhin", "location": "Barclays Center, Brooklyn", "description": "Black Lives Matter protest"},
+    "02-young-worshipper.jpg": {"title": "The Young Worshipper", "location": "Masjid At-Taqwa, Brooklyn", "description": "Eid prayer"},
+    "03-child.jpg": {"title": "The Child", "location": "Masjid At-Taqwa, Brooklyn", "description": "Eid prayer"}
+  }
+}
