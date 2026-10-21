@@ -1,0 +1,23 @@
+/* Layout only: typography and colors inherit the real estate portfolio. */
+.wharton-page .re-header h1{white-space:normal}
+.wharton-jump{display:flex;flex-wrap:wrap;gap:1rem 1.5rem}
+.wharton-section{margin-top:4rem;scroll-margin-top:6rem}
+.wharton-section>h2{font-family:var(--f-serif);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:400}
+.wharton-section .re-video video{display:block;width:100%;height:100%;object-fit:contain}
+.wharton-photo{display:block;width:100%;padding:0;border:0;background:inherit;color:inherit}
+.wharton-photo img{width:100%;height:auto;object-fit:contain}
+.wharton-room{margin-top:2.5rem;scroll-margin-top:6rem}
+.wharton-room .re-gallery{margin-top:1rem;align-items:center}
+.wharton-room .re-gallery>.re-photo:last-child:nth-child(odd){grid-column:1/-1}
+#primary-bath .re-photo:last-child{max-width:44rem;justify-self:center}
+.wharton-room .re-gallery>.re-photo:only-child{grid-column:1/-1;max-width:100%;justify-self:center}
+.wharton-room:has(.re-photo:only-child) .re-photo{width:100%}
+#hallway .re-photo,#walk-in-closet .re-photo{max-width:44rem}
+.wharton-lightbox{width:min(96vw,1440px);max-width:96vw;max-height:96dvh;border:1px solid var(--muted);padding:1rem;background:var(--black);color:var(--offwhite);margin:auto}
+.wharton-lightbox::backdrop{background:var(--black);opacity:.95}
+.wharton-lightbox img{width:100%;height:min(76dvh,1000px);object-fit:contain}
+.wharton-lightbox-bar{display:flex;justify-content:space-between;align-items:center;gap:1rem;font-family:var(--f-body);font-size:.8rem;padding:.5rem 0}
+.wharton-lightbox-bar button{font:inherit;color:inherit;background:transparent;border:1px solid var(--muted);padding:.6rem .8rem}
+.wharton-lightbox-bar p{text-align:center}
+body:has(.wharton-lightbox[open]){overflow:hidden}
+@media(max-width:700px){.wharton-section{margin-top:3rem}.wharton-lightbox{padding:.6rem}.wharton-lightbox-bar{gap:.5rem;font-size:.7rem}.wharton-lightbox-bar button{padding:.65rem .5rem}}
