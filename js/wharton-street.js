@@ -14,19 +14,29 @@
     }
   });
   const shareButton = document.getElementById('wharton-share');
-  if (typeof navigator.share === 'function') {
-    shareButton.hidden = false;
-    shareButton.addEventListener('click', async () => {
-      shareStatus.textContent = '';
-      try {
-        await navigator.share({title: '27–29 Wharton Street — Hamza AM', url: showcaseUrl});
-      } catch (error) {
-        if (error.name !== 'AbortError') {
-          shareStatus.textContent = 'Sharing is unavailable. Copy the showcase link or share by email.';
-        }
-      }
-    });
+  function shareByEmail() {
+    window.location.href = 'mailto:?subject=' + encodeURIComponent('27–29 Wharton Street — Hamza AM') + '&body=' + encodeURIComponent('Explore 27–29 Wharton Street in Newark, New Jersey:\n' + showcaseUrl);
   }
+  shareButton.addEventListener('click', async () => {
+    shareStatus.textContent = '';
+    if (typeof navigator.share !== 'function') {
+      shareByEmail();
+      return;
+    }
+    try {
+      await navigator.share({title: '27–29 Wharton Street — Hamza AM', url: showcaseUrl});
+    } catch (error) {
+      if (error.name !== 'AbortError') shareByEmail();
+    }
+  });
+  document.querySelectorAll('[data-scroll-to]').forEach(button => {
+    button.addEventListener('click', () => {
+      const section = document.getElementById(button.dataset.scrollTo);
+      section.scrollIntoView({behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start'});
+      section.setAttribute('tabindex', '-1');
+      section.focus({preventScroll: true});
+    });
+  });
 
   const photos = [...document.querySelectorAll('[data-photo]')];
   const dialog = document.querySelector('.wharton-lightbox');
