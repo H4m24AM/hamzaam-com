@@ -1,16 +1,17 @@
 (() => {
   const showcaseUrl = document.querySelector('link[rel="canonical"]').href;
+  const shortUrl = 'https://hamza.am/wharton';
   const shareStatus = document.getElementById('wharton-share-status');
   const copyButton = document.getElementById('wharton-copy');
   copyButton.hidden = false;
   copyButton.addEventListener('click', async () => {
     shareStatus.textContent = '';
     try {
-      await navigator.clipboard.writeText(showcaseUrl);
+      await navigator.clipboard.writeText(shortUrl);
       shareStatus.textContent = 'Showcase link copied.';
     } catch {
       // Keep the link available when clipboard access is unavailable or denied.
-      window.prompt('Copy this showcase link:', showcaseUrl);
+      window.prompt('Copy this showcase link:', shortUrl);
     }
   });
   const shareButton = document.getElementById('wharton-share');
