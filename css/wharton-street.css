@@ -20,4 +20,15 @@
 .wharton-lightbox-bar button{font:inherit;color:inherit;background:transparent;border:1px solid var(--muted);padding:.6rem .8rem}
 .wharton-lightbox-bar p{text-align:center}
 body:has(.wharton-lightbox[open]){overflow:hidden}
+.wharton-floor-plan{display:block;width:100%;height:auto;background:var(--white)}
+.wharton-floor-hit polygon{fill:var(--gold);fill-opacity:0;stroke:var(--gold);stroke-opacity:0;stroke-width:5;vector-effect:non-scaling-stroke;transition:fill-opacity .15s,stroke-opacity .15s}
+.wharton-floor-hit:hover polygon,.wharton-floor-hit:focus-visible polygon{fill-opacity:.2;stroke-opacity:1}
+.wharton-page .wharton-floor-hit:focus-visible{outline:none}
+.wharton-floor-rooms{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.75rem;margin-top:1.25rem}
+.wharton-floor-rooms a{display:flex;flex-direction:column;gap:.4rem;border:1px solid var(--muted);padding:.85rem;font-family:var(--f-body);font-size:.8rem}
+.wharton-floor-rooms a:hover{border-color:var(--gold);color:var(--gold)}
+.wharton-floor-rooms span{font-family:var(--f-mono);font-size:.6rem}
+.wharton-floor-download{margin-top:1.25rem}
+@media(max-width:900px){.wharton-floor-rooms{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:700px){.wharton-floor-rooms{grid-template-columns:repeat(2,minmax(0,1fr))}.wharton-floor-hit polygon{stroke-width:3}}
 @media(max-width:700px){.wharton-section{margin-top:3rem}.wharton-lightbox{padding:.6rem}.wharton-lightbox-bar{gap:.5rem;font-size:.7rem}.wharton-lightbox-bar button{padding:.65rem .5rem}}
