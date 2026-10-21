@@ -28,3 +28,9 @@ body:has(.wharton-lightbox[open]){overflow:hidden}
 .wharton-floor-download{margin-top:1.25rem}
 @media(max-width:700px){.wharton-floor-hit polygon{stroke-width:3}}
 @media(max-width:700px){.wharton-section{margin-top:3rem}.wharton-lightbox{padding:.6rem}.wharton-lightbox-bar{gap:.5rem;font-size:.7rem}.wharton-lightbox-bar button{padding:.65rem .5rem}}
+
+.wharton-share{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1.5rem;margin-top:1.25rem}
+.wharton-share button{font:inherit;font-size:.75rem;color:inherit;cursor:pointer;background:transparent;border:0;border-bottom:1px solid var(--gold);padding:0}
+.wharton-share .re-link{min-height:44px;display:inline-flex;align-items:center}
+.wharton-share [hidden]{display:none}
+.wharton-share-status:empty{display:none}

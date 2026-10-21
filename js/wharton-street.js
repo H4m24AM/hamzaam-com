@@ -1,4 +1,33 @@
 (() => {
+  const showcaseUrl = document.querySelector('link[rel="canonical"]').href;
+  const shareStatus = document.getElementById('wharton-share-status');
+  const copyButton = document.getElementById('wharton-copy');
+  copyButton.hidden = false;
+  copyButton.addEventListener('click', async () => {
+    shareStatus.textContent = '';
+    try {
+      await navigator.clipboard.writeText(showcaseUrl);
+      shareStatus.textContent = 'Showcase link copied.';
+    } catch {
+      // Keep the link available when clipboard access is unavailable or denied.
+      window.prompt('Copy this showcase link:', showcaseUrl);
+    }
+  });
+  const shareButton = document.getElementById('wharton-share');
+  if (typeof navigator.share === 'function') {
+    shareButton.hidden = false;
+    shareButton.addEventListener('click', async () => {
+      shareStatus.textContent = '';
+      try {
+        await navigator.share({title: '27–29 Wharton Street — Hamza AM', url: showcaseUrl});
+      } catch (error) {
+        if (error.name !== 'AbortError') {
+          shareStatus.textContent = 'Sharing is unavailable. Copy the showcase link or share by email.';
+        }
+      }
+    });
+  }
+
   const photos = [...document.querySelectorAll('[data-photo]')];
   const dialog = document.querySelector('.wharton-lightbox');
   const image = document.getElementById('wharton-image');
