@@ -1,0 +1,9 @@
+/* Page-specific layout for the portrait floor plan; shared showcase styling stays unchanged. */
+.president-page .wharton-floor-plan{max-width:36rem;margin:0 auto}
+.president-details{display:flex;flex-wrap:wrap;gap:1rem 2.5rem;margin-top:1.5rem;font-size:.8rem}
+.president-details div{display:flex;gap:.65rem;align-items:baseline}
+.president-details dt{color:#bbb}.president-details dd{margin:0}
+.president-page .wharton-toolbar-sections{display:flex}
+.president-page .wharton-toolbar-sections button{flex:1}
+@media(max-width:600px){.president-page .wharton-toolbar-sections{display:grid;grid-template-columns:1fr 1fr}.president-details{gap:.75rem 1.5rem}}
+
