@@ -273,7 +273,10 @@
       </div>
 
       <!-- Right: form -->
-      <form class="contact-form" onsubmit="handleContactForm(event)">
+      <form class="contact-form" action="https://formsubmit.co/admin@hamza.am" method="POST">
+        <input type="hidden" name="_subject" value="New inquiry from Hamza.AM">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="contact-form__row">
           <div class="contact-form__group">
             <label for="cf-name">Name</label>
@@ -300,9 +303,7 @@
           <textarea id="cf-message" name="message" placeholder="Tell me about your project or question..." required></textarea>
         </div>
         <button type="submit" class="btn btn--solid-black" style="align-self: flex-start;">Send Message →</button>
-        <p id="cf-success" style="display:none; font-family:var(--f-mono); font-size:0.7rem; letter-spacing:0.12em; color:green; margin-top:0.5rem;">
-          MESSAGE SENT — I'll be in touch soon.
-        </p>
+        <p class="contact-form__delivery" style="font-size:0.8rem; margin-top:0.5rem;">Your message will be sent to <a href="mailto:admin@hamza.am">admin@hamza.am</a>. You may be asked to complete a spam check.</p>
       </form>
 
     </div>
@@ -394,13 +395,5 @@
 
 
   <script src="js/main.js"></script>
-  <script>
-    function handleContactForm(e) {
-      e.preventDefault();
-      // Replace with Formspree: <form action="https://formspree.io/f/YOUR_ID" method="POST">
-      document.getElementById('cf-success').style.display = 'block';
-      e.target.reset();
-    }
-  </script>
 </body>
 </html>
