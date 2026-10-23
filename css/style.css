@@ -1441,13 +1441,3 @@ body {
   .contact-body { grid-template-columns: 1fr; }
   .contact-form__row { grid-template-columns: 1fr; }
 }
-
-/* Revised Hamza.AM wordmark, preserving the SVG's original clear space. */
-.nav__logo { display: inline-flex; align-items: center; flex-shrink: 0; }
-.brand-logo { display: block; width: 180px; height: auto; max-width: 100%; }
-.nav__logo .brand-logo--white { display: none; }
-.re-page .nav__logo .brand-logo--black,
-.collection-page .nav__logo .brand-logo--black { display: none; }
-.re-page .nav__logo .brand-logo--white,
-.collection-page .nav__logo .brand-logo--white { display: block; }
-.footer__logo .brand-logo, .ph-footer__logo .brand-logo { width: 200px; }
