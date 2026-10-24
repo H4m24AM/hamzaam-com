@@ -1441,3 +1441,8 @@ body {
   .contact-body { grid-template-columns: 1fr; }
   .contact-form__row { grid-template-columns: 1fr; }
 }
+/* Approved Hamza.AM logo */
+.nav__logo { display:flex; align-items:center; flex-shrink:0; line-height:0; }
+.nav__logo .brand-logo { display:block; width:84px; height:47px; object-fit:contain; }
+.footer__logo { display:inline-flex; line-height:0; }
+.footer__logo .brand-logo { display:block; width:160px; height:auto; filter:invert(1); }
