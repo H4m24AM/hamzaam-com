@@ -7,3 +7,5 @@
 
 /* Landing page copy spacing. */
 .hero .intro{max-width:410px}.services-description{color:var(--muted);margin:14px 0 0}.section-heading h2{max-width:650px}.pricing h2{max-width:760px}
+
+#inquiry-status{font-size:13px;margin:14px 0 0}#inquiry-status:empty{display:none}#inquiry-status[data-state="error"]{border-left:3px solid currentColor;padding-left:12px}button:disabled{opacity:.6;cursor:wait}
