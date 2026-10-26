@@ -9,7 +9,7 @@ export async function onRequestPost({ request }) {
   if (!fields.name || !fields.property_location || !fields.property_type || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email)) return response(400, {error:'Please enter your name, email, property location, and property type.'});
   if (Object.values(fields).some(value => value.length > 4000)) return response(400, {error:'Please shorten your message.'});
   try {
-    const upstream = await fetch('https://formsubmit.co/ajax/inquiries@hamza.am', {
+    const upstream = await fetch('https://formsubmit.co/ajax/eceed28a1e6017f6524f24a1c4c2da15', {
       method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json','Referer':'https://hamza.am/real-estate-photography','Origin':'https://hamza.am'},
       body:JSON.stringify({...fields, _subject:'Real estate photography — availability request', _template:'table', _url:'https://hamza.am/real-estate-photography'}),
       signal:AbortSignal.timeout(20000)
