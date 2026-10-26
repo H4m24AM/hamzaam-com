@@ -14,3 +14,9 @@
 .panel-copy{transform:none!important;will-change:auto}
 @media(prefers-reduced-motion:reduce){.parallax-media{background-attachment:scroll}}
 .floorplan-showcase{margin-bottom:90px}.floorplan-showcase:last-child{margin-bottom:0}.floorplan-showcase .wharton-floor-plan{display:block;width:100%;height:auto;max-height:85vh;margin:25px auto 0;background:#fff}.floorplan-showcase .plan-help{text-align:center;font-size:13px;color:#666;line-height:1.7;margin:10px 0 25px}.floorplan-showcase .wharton-floor-hit polygon{fill:transparent;stroke:transparent;stroke-width:4;cursor:pointer;transition:fill .15s,stroke .15s}.floorplan-showcase .wharton-floor-hit:hover polygon,.floorplan-showcase .wharton-floor-hit:focus polygon{fill:#0002;stroke:#111}.showcase-slides .slides-intro{font-weight:400}@media(max-width:700px){.floorplan-showcase{margin-bottom:60px}.floorplan-showcase .plan-help{font-size:12px}}
+
+/* Match the existing photo signature to the real estate footer. */
+.immersive-footer{background:#1c1c1c;color:#fff}
+.immersive-footer .back-top{background:#1c1c1c}
+.immersive-footer p{color:#bbb}
+.immersive-footer .footer-signature{margin:0 auto 15px}
