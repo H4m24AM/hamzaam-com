@@ -1,4 +1,4 @@
-# Hamza AM — Website Source Code
+# Hamza.AM — Website Source Code
 
 Static HTML / CSS / JavaScript with a Python build step for folder-managed photography collections. See [collection instructions](content/photography/README.md).
 

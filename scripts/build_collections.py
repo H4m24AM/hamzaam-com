@@ -142,7 +142,7 @@ def render(template, nav, footer, title, description, body, path, photo=None, dr
             '<meta name="twitter:card" content="summary_large_image">')
     if photo:
         seo += f'<meta property="og:image" content="{SITE}{esc(photo["src"])}">'
-    return Template(template).substitute(page_title=esc(title + ' — Hamza AM'), description=esc(description),
+    return Template(template).substitute(page_title=esc(title + ' — Hamza.AM'), description=esc(description),
                                          seo=seo, nav=nav, footer=footer, body=body)
 
 
@@ -219,7 +219,7 @@ def generate(root, output, preview):
     directory = output / 'photography/collections'
     directory.mkdir(parents=True, exist_ok=True)
     (directory / 'index.html').write_text(render(template, nav, footer, 'Photography Collections',
-        'Photographic collections by Hamza AM.', index_body, '/photography/collections/'), encoding='utf-8')
+        'Photographic collections by Hamza.AM.', index_body, '/photography/collections/'), encoding='utf-8')
     source = read_text(root / 'photography.html')
     for marker in ('<!-- COLLECTION_FEATURES -->', '<!-- COLLECTION_ARCHIVE -->'):
         if source.count(marker) != 1:

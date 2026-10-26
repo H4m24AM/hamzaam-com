@@ -1,5 +1,5 @@
 /* ============================================================
-   HAMZA AM — main.js
+   Hamza.AM — main.js
    Navigation (mobile toggle, smooth scroll, active link),
    work carousel, scroll-in animations.
    No framework. Vanilla JS only.
