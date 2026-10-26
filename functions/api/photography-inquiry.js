@@ -8,12 +8,9 @@ export async function onRequestPost({ request }) {
   const fields = Object.fromEntries(['name','email','property_location','property_type','preferred_shoot_date','notes'].map(key => [key, String(data.get(key) || '').trim()]));
   if (!fields.name || !fields.property_location || !fields.property_type || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email)) return response(400, {error:'Please enter your name, email, property location, and property type.'});
   if (Object.values(fields).some(value => value.length > 4000)) return response(400, {error:'Please shorten your message.'});
-  const visitorIp = request.headers.get('CF-Connecting-IP');
-  const deliveryHeaders = {'Content-Type':'application/json','Accept':'application/json','Referer':'https://hamza.am/real-estate-photography','Origin':'https://hamza.am'};
-  if (visitorIp) deliveryHeaders['X-Forwarded-For'] = visitorIp;
   try {
     const upstream = await fetch('https://formsubmit.co/ajax/inquiries@hamza.am', {
-      method:'POST', headers:deliveryHeaders,
+      method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json','Referer':'https://hamza.am/real-estate-photography','Origin':'https://hamza.am'},
       body:JSON.stringify({...fields, _subject:'Real estate photography — availability request', _template:'table', _url:'https://hamza.am/real-estate-photography'}),
       signal:AbortSignal.timeout(20000)
     });
