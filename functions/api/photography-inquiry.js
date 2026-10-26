@@ -15,7 +15,7 @@ export async function onRequestPost({ request }) {
       signal:AbortSignal.timeout(20000)
     });
     const result = await upstream.json();
-    if (!upstream.ok || String(result.success) !== 'true' || /activat|confirm your email/i.test(result.message || '')) return response(503, {error:'Your request could not be confirmed. Please email inquiries@hamza.am directly.'});
+    if (!upstream.ok || String(result.success) !== 'true' || /activat|confirm your email/i.test(result.message || '')) return response(503, {error:'Your request could not be confirmed. Please email inquiries@hamza.am directly.', reason:String(result.message || 'Email service rejected the request').slice(0,300)});
     return response(200, {success:true});
   } catch { return response(503, {error:'The form service is temporarily unavailable. Please try again or email inquiries@hamza.am.'}); }
 }
