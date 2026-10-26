@@ -1,44 +1,53 @@
-/* Layout only: typography and colors inherit the real estate portfolio. */
-.wharton-page .re-header h1{white-space:normal;font-style:normal;font-size:clamp(2.5rem,6vw,4.2rem)}
-.wharton-jump{display:flex;flex-wrap:wrap;gap:1rem 1.5rem}
-.wharton-section{margin-top:4rem;scroll-margin-top:6rem}
-.wharton-page .re-header~#floor-plan{margin-top:0}
-.wharton-section>h2{font-family:var(--f-serif);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:400}
-.wharton-section .re-video video{display:block;width:100%;height:100%;object-fit:contain}
-.wharton-photo{display:block;width:100%;padding:0;border:0;background:inherit;color:inherit}
-.wharton-photo img{width:100%;height:auto;object-fit:contain}
-.wharton-room{margin-top:2.5rem;scroll-margin-top:6rem}
-.wharton-room .re-gallery{margin-top:1rem;align-items:center}
-.wharton-room .re-gallery>.re-photo:last-child:nth-child(odd){grid-column:1/-1}
-#primary-bath .re-photo:last-child{max-width:44rem;justify-self:center}
-.wharton-room .re-gallery>.re-photo:only-child{grid-column:1/-1;max-width:100%;justify-self:center}
-.wharton-room:has(.re-photo:only-child) .re-photo{width:100%}
-#hallway .re-photo,#walk-in-closet .re-photo{max-width:44rem}
-.wharton-lightbox{width:min(96vw,1440px);max-width:96vw;max-height:96dvh;border:1px solid var(--muted);padding:1rem;background:var(--black);color:var(--offwhite);margin:auto}
-.wharton-lightbox::backdrop{background:var(--black);opacity:.95}
-.wharton-lightbox img{width:100%;height:min(76dvh,1000px);object-fit:contain}
-.wharton-lightbox-bar{display:flex;justify-content:space-between;align-items:center;gap:1rem;font-family:var(--f-body);font-size:.8rem;padding:.5rem 0}
-.wharton-lightbox-bar button{font:inherit;color:inherit;background:transparent;border:1px solid var(--muted);padding:.6rem .8rem}
-.wharton-lightbox-bar p{text-align:center}
-body:has(.wharton-lightbox[open]){overflow:hidden}
-.wharton-floor-plan{display:block;width:100%;height:auto;background:var(--white)}
-.wharton-floor-hit polygon{fill:var(--gold);fill-opacity:0;stroke:var(--gold);stroke-opacity:0;stroke-width:5;vector-effect:non-scaling-stroke;transition:fill-opacity .15s,stroke-opacity .15s}
-.wharton-floor-hit:hover polygon,.wharton-floor-hit:focus-visible polygon{fill-opacity:.2;stroke-opacity:1}
-.wharton-page .wharton-floor-hit:focus-visible{outline:none}
-.wharton-floor-download{margin-top:1.25rem}
-@media(max-width:700px){.wharton-floor-hit polygon{stroke-width:3}}
-@media(max-width:700px){.wharton-section{margin-top:3rem}.wharton-lightbox{padding:.6rem}.wharton-lightbox-bar{gap:.5rem;font-size:.7rem}.wharton-lightbox-bar button{padding:.65rem .5rem}}
-
-
-/* A single, page-scoped property toolbar. */
-.wharton-toolbar{margin-top:2rem;border:1px solid #414141;background:#191919;color:#f8f6f2}
-.wharton-toolbar-top{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.25rem 1.5rem;border-bottom:1px solid #414141}
-.wharton-toolbar-label{font-family:var(--f-mono);font-size:.65rem;letter-spacing:.13em}
-.wharton-toolbar-share,.wharton-toolbar-sections{display:flex;flex-wrap:wrap;gap:.75rem}
-.wharton-toolbar-sections{padding:1.25rem 1.5rem}
-.wharton-toolbar-button{display:inline-flex;justify-content:center;align-items:center;gap:.6rem;min-height:44px;padding:.7rem 1.1rem;border:1px solid #777;border-radius:0;background:transparent;color:inherit;font-family:var(--f-body);font-size:.8rem;line-height:1.3;text-decoration:none;cursor:pointer}
-.wharton-toolbar-button:hover{background:#303030;border-color:#eee}
-.wharton-page .wharton-toolbar-button:focus-visible{outline:2px solid #fff;outline-offset:3px}
-.wharton-toolbar-button svg{flex-shrink:0}
-.wharton-share-status:empty{display:none}
-@media(max-width:600px){.wharton-toolbar-top{align-items:flex-start;flex-direction:column;padding:1rem}.wharton-toolbar-sections{padding:1rem;display:grid;grid-template-columns:1fr}.wharton-toolbar-share{width:100%}.wharton-toolbar-share button{flex:1}.wharton-toolbar-button{min-height:46px}}
+/* Property-only presentation. Shares typography and spacing with the photography portfolio. */
+.wharton-page{background:var(--white);color:var(--black);font-family:var(--f-body)}
+.wharton-page [hidden]{display:none!important}
+.wharton-page a{color:inherit}
+.wharton-page button{font:inherit;color:inherit;border:1px solid #d8d8d8;background:transparent;min-height:44px;padding:.65rem 1rem}
+.wharton-page button:hover{background:#f3f3f3}
+.wharton-page :focus-visible{outline:2px solid #222;outline-offset:4px}
+.property-container{max-width:1680px;margin:auto;padding:0 clamp(20px,5vw,80px)}
+.property-header{display:flex;justify-content:space-between;align-items:center;gap:2rem;padding:clamp(30px,5vw,70px) 0 30px;border-bottom:1px solid #ddd}
+.property-eyebrow{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#666;margin-bottom:14px}
+.property-header h1{font-size:clamp(24px,3vw,45px);font-weight:300;letter-spacing:.12em;line-height:1.4;text-transform:uppercase}
+.property-location{font-size:13px;letter-spacing:.08em;color:#666;margin-top:12px}
+.property-share{display:flex;gap:8px;flex-shrink:0}.property-share button{font-size:12px}
+.property-status{font-size:12px;color:#555;margin:14px 0}.property-status:empty{display:none}
+.property-tour{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(24px,3vw,48px);align-items:start;margin:36px 0 0;scroll-margin-top:20px}
+.property-viewer{min-width:0;scroll-margin-top:24px}
+.viewer-heading{display:flex;justify-content:space-between;gap:16px;align-items:baseline;margin-bottom:18px}
+.viewer-heading h2{font-weight:400;font-size:14px;letter-spacing:.14em;text-transform:uppercase}.viewer-heading span{font-size:12px;color:#666;font-variant-numeric:tabular-nums}
+.property-stage{position:relative;background:#f6f6f6}
+.wharton-page #selected-open{display:block;width:100%;padding:0;border:0;aspect-ratio:3/2;min-height:0;background:#f6f6f6}
+#selected-image{width:100%;height:100%;object-fit:contain}
+.wharton-page .stage-arrow{position:absolute;top:50%;transform:translateY(-50%);border:0;background:#0005;color:#fff;padding:0;width:40px;height:58px;font-size:32px;font-weight:300}
+.wharton-page .stage-arrow:hover{background:#0009}.stage-prev{left:0}.stage-next{right:0}
+.stage-expand{position:absolute;right:12px;bottom:12px;background:#0009;color:#fff;padding:6px 8px;font-size:10px;pointer-events:none;letter-spacing:.04em}
+.viewer-caption{display:flex;justify-content:space-between;align-items:center;gap:16px;margin:12px 0;color:#666;font-size:12px;min-height:24px}
+.wharton-page #choose-room{display:none}
+.property-thumbnails{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.wharton-page .property-thumbnails button{padding:0;border:0;flex:0 0 84px;aspect-ratio:3/2;min-height:0;background:#f6f6f6;opacity:.5}
+.property-thumbnails img{width:100%;height:100%;object-fit:cover}.wharton-page .property-thumbnails button[aria-pressed=true]{opacity:1;outline:1px solid #222;outline-offset:2px}
+.property-plan{min-width:0;padding-top:1px;scroll-margin-top:20px}
+.plan-heading{display:flex;justify-content:space-between;gap:16px;align-items:start}.plan-heading h2{font-size:19px;letter-spacing:.02em;font-weight:300}.plan-heading .property-eyebrow{margin-bottom:8px}
+.plan-help{font-size:12px;color:#666;line-height:1.7;margin:14px 0 22px}
+.wharton-page #close-plan{display:none}
+.wharton-floor-plan{display:block;width:100%;height:auto;background:#fff}
+.wharton-floor-hit polygon{fill:#222;fill-opacity:0;stroke:#222;stroke-opacity:0;stroke-width:3;vector-effect:non-scaling-stroke;transition:fill-opacity .15s,stroke-opacity .15s}
+.wharton-floor-hit:hover polygon,.wharton-floor-hit:focus-visible polygon{fill-opacity:.12;stroke-opacity:.8}
+.wharton-floor-hit[aria-pressed=true] polygon{fill-opacity:.19;stroke-opacity:1}
+.room-choices{display:flex;flex-wrap:wrap;gap:7px;margin:22px 0}
+.wharton-page .room-choice{font-size:11px;min-height:38px;padding:7px 10px}
+.wharton-page .room-choice[aria-pressed=true]{background:#222;color:#fff;border-color:#222}
+.plan-download{font-size:11px;border-bottom:1px solid #aaa;padding-bottom:5px;display:inline-block}
+.property-browse{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center;padding:30px 0;border-bottom:1px solid #ddd;margin-bottom:60px;font-size:12px;letter-spacing:.04em}.property-browse p{color:#666}.property-browse a{border-bottom:1px solid #999;padding-bottom:5px}
+.wharton-section{scroll-margin-top:30px}.re-section-heading{display:flex;justify-content:space-between;gap:20px;align-items:baseline;margin-bottom:20px}.re-section-heading h2{font-size:22px;font-weight:300;letter-spacing:.12em;text-transform:uppercase}.re-section-heading span{font-size:12px;color:#666}
+.re-note{font-size:13px;color:#666;line-height:1.8;margin-bottom:25px}.wharton-jump{display:flex;gap:12px 22px;flex-wrap:wrap;font-size:12px;margin-bottom:40px}.re-link{border-bottom:1px solid #bbb;padding-bottom:5px}
+.wharton-room{margin:40px 0;scroll-margin-top:30px}.re-eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;margin-bottom:18px}.re-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:center}.re-photo{margin:0;min-width:0}.wharton-page .wharton-photo{padding:0;border:0;display:block;width:100%;background:#f8f8f8;min-height:0}.wharton-photo img{width:100%;height:auto}.wharton-room .re-gallery:has(>.re-photo:only-child){max-width:700px;margin-inline:auto}.wharton-room .re-gallery>.re-photo:last-child:nth-child(odd){grid-column:1/-1;max-width:100%;justify-self:center}
+.property-footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:30px 0;margin-top:60px;border-top:1px solid #ddd;color:#666;font-size:11px;letter-spacing:.05em}
+.property-skip{position:absolute;top:-100px;left:20px;z-index:100;background:#fff;padding:16px}.property-skip:focus{top:10px}
+.wharton-lightbox{width:min(96vw,1440px);max-width:96vw;max-height:96dvh;border:0;padding:1rem;background:#0d0d0d;color:#f8f6f2;margin:auto}
+.wharton-lightbox::backdrop{background:#000e}.wharton-lightbox img{width:100%;height:min(76dvh,1000px);object-fit:contain}
+.wharton-lightbox-bar{display:flex;justify-content:space-between;align-items:center;gap:1rem;font-size:12px;padding:.5rem 0}.wharton-lightbox-bar p{text-align:center}.wharton-page .wharton-lightbox button{color:#fff;border-color:#777;font-size:12px}.wharton-page .wharton-lightbox button:hover{background:#333}.wharton-page .wharton-lightbox :focus-visible{outline-color:#fff}body:has(.wharton-lightbox[open]){overflow:hidden}
+@media(max-width:900px){.property-tour{grid-template-columns:1fr;margin-top:25px}.property-plan{display:none;padding:24px 0;border-top:1px solid #ddd}.property-plan.is-open{display:block}.wharton-page #choose-room,.wharton-page #close-plan{display:block;font-size:12px}.property-header{align-items:flex-start;flex-direction:column;gap:20px}.property-header h1{letter-spacing:.08em}.room-choices{gap:8px}.wharton-page .room-choice{min-height:44px}.property-browse{margin-bottom:40px}.wharton-lightbox{padding:10px}.wharton-lightbox-bar{gap:8px;font-size:11px}}
+@media(max-width:550px){.re-gallery{grid-template-columns:1fr}.property-thumbnails{gap:6px}.wharton-page .property-thumbnails button{flex-basis:70px}.viewer-heading h2{font-size:12px}.property-share button{font-size:11px}.wharton-jump{gap:15px}.re-section-heading{flex-wrap:wrap}.wharton-lightbox-bar button{padding:10px 8px}.property-footer{margin-top:40px}.property-stage .stage-arrow{width:35px;height:48px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.wharton-page *{transition:none!important}}
