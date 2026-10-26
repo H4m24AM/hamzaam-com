@@ -10,7 +10,7 @@ export async function onRequestPost({ request }) {
   if (Object.values(fields).some(value => value.length > 4000)) return response(400, {error:'Please shorten your message.'});
   try {
     const upstream = await fetch('https://formsubmit.co/ajax/inquiries@hamza.am', {
-      method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
+      method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json','Referer':'https://hamza.am/real-estate-photography','Origin':'https://hamza.am'},
       body:JSON.stringify({...fields, _subject:'Real estate photography — availability request', _template:'table', _url:'https://hamza.am/real-estate-photography'}),
       signal:AbortSignal.timeout(20000)
     });
