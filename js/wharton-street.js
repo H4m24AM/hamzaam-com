@@ -1,5 +1,5 @@
 (() => {
-  const shortUrl = 'https://hamza.am/wharton';
+  const shortUrl = document.querySelector('meta[name="property:share-url"]')?.content || 'https://hamza.am/wharton';
   const title = '27–29 Wharton Street · Newark, New Jersey';
   const status = document.getElementById('wharton-share-status');
   document.getElementById('wharton-copy').addEventListener('click', async () => {

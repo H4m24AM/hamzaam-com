@@ -1,0 +1,29 @@
+/* A second property presentation using the photography page's editorial layout. */
+.wharton-editorial .property-container{max-width:none;padding:0}
+.wharton-editorial .property-header,.wharton-editorial .property-status,.wharton-editorial .property-tour,.wharton-editorial .property-browse,.wharton-editorial #finished-gallery,.wharton-editorial .property-footer{max-width:1440px;margin-left:auto;margin-right:auto;padding-left:clamp(20px,5vw,80px);padding-right:clamp(20px,5vw,80px)}
+.wharton-editorial .property-cover{height:100svh;min-height:540px}
+.wharton-editorial .property-cover .parallax-media::after{content:'';position:absolute;inset:0;background:#0003}
+.wharton-editorial .panel-copy{position:relative;z-index:1}
+.wharton-editorial .panel-copy h1,.wharton-editorial .panel-copy h2{font-family:var(--f-body);font-weight:300;font-size:clamp(25px,3.4vw,54px);letter-spacing:.17em;line-height:1.5;text-transform:uppercase}
+.wharton-editorial .panel-copy p{margin-top:35px}
+.wharton-editorial .cover-explore{display:inline-block;color:#fff;margin-top:45px;border-bottom:1px solid #fff8;padding-bottom:8px;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.wharton-editorial .property-header{padding-top:80px;padding-bottom:35px;border:0}
+.wharton-editorial .property-header h2{font-size:clamp(22px,2.5vw,34px);font-weight:300;letter-spacing:.13em;text-transform:uppercase}
+.wharton-editorial .property-tour{margin-top:0;padding-top:15px}
+.wharton-editorial .property-browse{margin-bottom:0;padding-top:35px;padding-bottom:70px;border:0}
+.wharton-editorial .gallery-cover{height:80svh;min-height:450px;margin-top:0}
+.wharton-editorial .gallery-cover .parallax-media::after{content:'';position:absolute;inset:0;background:#0002}
+.wharton-editorial #finished-gallery{padding-top:90px;padding-bottom:50px;max-width:1200px}
+.wharton-editorial .wharton-jump{justify-content:center;margin:40px 0 65px}
+.wharton-editorial #finished-gallery>.re-section-heading{justify-content:center;flex-direction:column;align-items:center;gap:20px}
+.wharton-editorial #finished-gallery>.re-note{text-align:center;margin-top:20px}
+.wharton-editorial .wharton-room{margin:55px 0}
+.wharton-editorial .wharton-room .re-eyebrow{text-align:center;margin-bottom:25px}
+.wharton-editorial .wharton-room .re-gallery{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;max-width:none}
+.wharton-editorial .wharton-room .re-gallery>.re-photo:last-child:nth-child(odd){grid-column:auto}
+.wharton-editorial .wharton-room .wharton-photo{aspect-ratio:3/2}
+.wharton-editorial .wharton-room .wharton-photo img{width:100%;height:100%;object-fit:contain}
+.wharton-editorial .property-footer{margin-top:0;padding-top:40px;padding-bottom:40px}
+.wharton-editorial :focus-visible{outline-color:#777}
+.wharton-editorial .property-cover :focus-visible{outline-color:#fff}
+@media(max-width:700px){.wharton-editorial .property-header{padding-top:45px}.wharton-editorial .panel-copy{padding:25px}.wharton-editorial .parallax-media{background-attachment:scroll}.wharton-editorial .property-cover{min-height:480px}.wharton-editorial .gallery-cover{height:65svh;min-height:350px}.wharton-editorial #finished-gallery{padding-top:55px}.wharton-editorial .wharton-room .re-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.wharton-editorial .wharton-jump{margin-bottom:40px}.wharton-editorial .property-browse{padding-bottom:40px}}
