@@ -109,3 +109,17 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 
 .breadcrumb a:hover { color: var(--black); text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 480px) { .breadcrumb { gap: 5px; font-size: 8px; } }
+
+/* Native Hamza.AM website header and the original SVG logo. */
+.site-masthead { height:78px; position:sticky; top:0; z-index:30; background:#FFFFFF; border-bottom:1px solid #E5E5E5; display:flex; align-items:center; justify-content:space-between; padding:0 38px; gap:25px; }
+.site-logo-link { display:flex; align-items:center; flex-shrink:0; }
+.site-logo-link img { display:block; width:96px; height:55px; object-fit:contain; }
+.site-links { display:flex; align-items:center; gap:28px; }
+.site-links a { color:#0D0D0D; font-size:11px; font-weight:600; letter-spacing:.04em; padding:9px 0; border-bottom:1px solid transparent; }
+.site-links a:hover { border-bottom-color:#C8A96E; }
+.sidebar { top:78px; }
+.wordmark { min-height:58px; }
+.archive-site-logo { width:105px; height:59px; object-fit:contain; }
+.archive-footer-logo { width:58px; height:auto; }
+@media(max-width:980px) { .site-masthead { padding:0 24px; } .site-links { gap:18px; } .site-links a { font-size:10px; } }
+@media(max-width:700px) { .site-masthead { height:68px; padding:0 20px; gap:12px; } .site-logo-link img { width:86px; height:48px; } .site-links { gap:16px; } .site-links a { font-size:9px; } .site-links a:nth-last-child(-n+3) { display:none; } .sidebar { top:68px; } }

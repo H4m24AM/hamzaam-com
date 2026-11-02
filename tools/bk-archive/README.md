@@ -1,6 +1,6 @@
 # Hamza.AM private Brooklyn archive
 
-This is the native `/bk-archive` page for the existing Cloudflare Pages website. It preserves archive browsing, shoot planning, original photo uploads, notes, attribution, comparison modes, and saved alignment. The private Sites deployment remains available during migration.
+This is the native `/bk-archive` page for the existing Cloudflare Pages website, with the original `/images/hamza-am-logo.svg` logo, Hamza.AM navigation, and the photography brand colors. It is served by the website itself rather than redirecting to Sites. It preserves archive browsing, shoot planning, original photo uploads, notes, attribution, comparison modes, and saved alignment. The private Sites deployment remains available during migration.
 
 ## One-time Cloudflare setup before merging
 
