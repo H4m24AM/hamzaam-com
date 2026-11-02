@@ -164,9 +164,9 @@ def generate(root, output, preview):
     # Copy existing public site only. Never expose source masters or editorial metadata.
     for source in root.iterdir():
         if source.is_file() and (source.suffix.lower() in {'.html', '.ico', '.svg', '.xml', '.webmanifest'}
-                                or source.name in {'_headers', '_redirects', 'robots.txt'}):
+                                or source.name in {'_headers', '_redirects', '_routes.json', 'robots.txt'}):
             shutil.copy2(source, output / source.name)
-    for name in ('css', 'js', 'images', 'photography'):
+    for name in ('css', 'js', 'images', 'photography', 'bk-archive'):
         source = root / name
         if source.exists():
             shutil.copytree(source, output / name)
