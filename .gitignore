@@ -9,3 +9,5 @@ preview-dist/
 __pycache__/
 
 .collection-test-*/
+
+tools/bk-archive/node_modules/
