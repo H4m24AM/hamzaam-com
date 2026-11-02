@@ -1,4 +1,3 @@
-//#region tools/bk-archive/node_modules/.pnpm/jose@6.2.14/node_modules/jose/dist/webapi/lib/buffer_utils.js
 var e = new TextEncoder(), t = new TextDecoder(), n = new TextDecoder("utf-8", { fatal: !0 });
 function r(...e) {
 	let t = e.reduce((e, { length: t }) => e + t, 0), n = new Uint8Array(t), r = 0;
@@ -29,8 +28,6 @@ function o(e, t = !1) {
 	for (let e = 0; e < n.length; e++) r[e] = n.charCodeAt(e);
 	return r;
 }
-//#endregion
-//#region tools/bk-archive/node_modules/.pnpm/jose@6.2.14/node_modules/jose/dist/webapi/util/errors.js
 var s = class extends Error {
 	static code = "ERR_JOSE_GENERIC";
 	code = "ERR_JOSE_GENERIC";
@@ -111,8 +108,6 @@ function b(e) {
 		throw TypeError(y, { cause: e });
 	}
 }
-//#endregion
-//#region tools/bk-archive/node_modules/.pnpm/jose@6.2.14/node_modules/jose/dist/webapi/lib/validate.js
 function x(e) {
 	if (typeof e != "object" || !e || Object.prototype.toString.call(e) !== "[object Object]") return !1;
 	let t = Object.getPrototypeOf(e);
@@ -185,8 +180,6 @@ function ie(e, t) {
 	}
 	return !0;
 }
-//#endregion
-//#region tools/bk-archive/node_modules/.pnpm/jose@6.2.14/node_modules/jose/dist/webapi/lib/key.js
 var E = (e) => e[Symbol.toStringTag], ae = (e, t, n) => {
 	let { alg: r } = e;
 	if (t.use !== void 0) {
@@ -308,8 +301,6 @@ async function M(e, t, n) {
 async function he(e, t, n, r = !1) {
 	return e instanceof Uint8Array && (e = await crypto.subtle.importKey("raw", e, t, r, [n])), pe(e, t, n), e;
 }
-//#endregion
-//#region tools/bk-archive/node_modules/.pnpm/jose@6.2.14/node_modules/jose/dist/webapi/lib/key_descriptor.js
 function ge(e) {
 	let t = { __proto__: null };
 	for (let n in e) t[n] = {
@@ -318,8 +309,6 @@ function ge(e) {
 	};
 	return t;
 }
-//#endregion
-//#region tools/bk-archive/node_modules/.pnpm/jose@6.2.14/node_modules/jose/dist/webapi/lib/jws_algorithms.js
 var N = [["verify"], ["sign"]];
 function P(e) {
 	let t = {
@@ -408,8 +397,6 @@ function _e(e) {
 	if (!t) throw new d(`alg ${e} is not supported either by JOSE or your javascript runtime`);
 	return t;
 }
-//#endregion
-//#region tools/bk-archive/node_modules/.pnpm/jose@6.2.14/node_modules/jose/dist/webapi/lib/jws_verify.js
 function ve(e) {
 	return [e && T("algorithms", e.algorithms), e?.crit];
 }
@@ -462,8 +449,6 @@ async function B(e, n, r) {
 		signature: o
 	}, n, r, be);
 }
-//#endregion
-//#region tools/bk-archive/node_modules/.pnpm/jose@6.2.14/node_modules/jose/dist/webapi/lib/jwt_claims_set.js
 var Se = (e) => Math.floor(e.getTime() / 1e3), Ce = {
 	s: 1,
 	m: 60,
@@ -532,8 +517,6 @@ function Ee(e, t, r = {}) {
 	}
 	return i;
 }
-//#endregion
-//#region tools/bk-archive/node_modules/.pnpm/jose@6.2.14/node_modules/jose/dist/webapi/jwt/verify.js
 async function De(e, t, n) {
 	let [r, i] = await B(e, ve(n), t);
 	if (!i) throw new p("JWTs MUST NOT use unencoded payload");
@@ -543,8 +526,6 @@ async function De(e, t, n) {
 		payload: a
 	};
 }
-//#endregion
-//#region tools/bk-archive/node_modules/.pnpm/jose@6.2.14/node_modules/jose/dist/webapi/jwks/local.js
 function Oe(e, t, n, r) {
 	let { kty: i, key_ops: a, ext: o, kid: s, alg: c, use: l, crv: u } = e;
 	return (o === void 0 || typeof o == "boolean") && (a === void 0 || Array.isArray(a) && a.every((e, t) => typeof e == "string" && a.indexOf(e) === t) && a.includes("verify")) && t.kty.includes(i) && (r === void 0 || typeof r == "string" && r === s) && (c === void 0 ? i !== "AKP" : n === c) && (l === void 0 || l === "sig") && (!t.crv || u === t.crv);
@@ -593,8 +574,6 @@ function Y(e) {
 		return J(r, l, s);
 	}, "jwks", { value: () => structuredClone(t) });
 }
-//#endregion
-//#region tools/bk-archive/node_modules/.pnpm/jose@6.2.14/node_modules/jose/dist/webapi/jwks/remote.js
 function ke() {
 	return typeof WebSocketPair < "u" || typeof navigator < "u" && navigator.userAgent === "Cloudflare-Workers" || typeof EdgeRuntime < "u" && EdgeRuntime === "vercel";
 }
@@ -681,8 +660,6 @@ function Ne(e, t) {
 		}
 	});
 }
-//#endregion
-//#region tools/bk-archive/src/access.js
 var $ = /* @__PURE__ */ new Map();
 async function Pe(e, t, n = De) {
 	let r = String(t.BK_ARCHIVE_ACCESS_TEAM_DOMAIN || "").trim(), i = String(t.BK_ARCHIVE_ACCESS_AUD || "").trim(), a = String(t.BK_ARCHIVE_OWNER_EMAIL || "").trim().toLowerCase();
@@ -723,5 +700,4 @@ async function Pe(e, t, n = De) {
 		};
 	}
 }
-//#endregion
 export { Pe as authenticateArchive };
