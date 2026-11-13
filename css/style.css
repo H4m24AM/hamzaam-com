@@ -376,39 +376,25 @@ body {
    ============================================================ */
 .wid {
   background: var(--offwhite);
-  padding: clamp(3.5rem, 7vw, 6rem) clamp(1rem, 4.7vw, 4rem);
+  padding: clamp(1.5rem, 4svh, 2.5rem) clamp(1rem, 4.7vw, 4rem);
+  scroll-margin-top: 60px;
   text-align: center;
 }
 
-.wid__header { margin-bottom: clamp(2rem, 6vw, 4.5rem); }
+.wid__header { margin-bottom: clamp(1.35rem, 3.8svh, 2rem); }
 
-.wid__eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.85rem;
-  margin-bottom: 0.9rem;
-  color: var(--black);
-  font-weight: 700;
-}
-
-.wid__eyebrow::before,
-.wid__eyebrow::after {
-  content: '';
-  width: clamp(1.75rem, 5vw, 4rem);
-  height: 1px;
-  background: var(--gold);
-}
+.wid__header .gold-rule { margin: 0 auto 0.75rem; }
 
 .wid__title {
-  font-size: clamp(2.3rem, 6.2vw, 5rem);
+  font-size: clamp(2rem, 4.6vw, 3.75rem);
   font-weight: 700;
   line-height: 1.06;
   letter-spacing: -0.045em;
 }
 
 .wid__subtitle {
-  margin-top: 0.65rem;
-  font-size: clamp(1.15rem, 3.3vw, 2.75rem);
+  margin-top: 0.4rem;
+  font-size: clamp(1.05rem, 2.45vw, 1.85rem);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.03em;
@@ -429,8 +415,8 @@ body {
   display: flex;
   align-items: flex-end;
   min-width: 0;
-  min-height: clamp(23rem, 46vw, 38rem);
-  padding: clamp(0.9rem, 2.15vw, 2rem);
+  min-height: clamp(17rem, 52svh, 26rem);
+  padding: clamp(0.85rem, 1.7vw, 1.5rem);
   border-bottom: 0.35rem solid transparent;
   border-radius: 0.5rem;
   background: #101010;
@@ -458,13 +444,13 @@ body {
 
 .wid__card-icon {
   display: block;
-  width: clamp(1.65rem, 3.5vw, 3rem);
+  width: clamp(1.45rem, 2.7vw, 2.4rem);
   height: auto;
   margin-bottom: 0.55rem;
 }
 
 .wid__card-name {
-  font-size: clamp(1.15rem, 2.7vw, 2.25rem);
+  font-size: clamp(1.15rem, 2.4vw, 1.95rem);
   line-height: 1.04;
   letter-spacing: -0.045em;
   margin-bottom: 0.65rem;
@@ -473,7 +459,7 @@ body {
 .wid__card-desc {
   font-size: clamp(0.8rem, 1.28vw, 1.1rem);
   line-height: 1.45;
-  margin-bottom: clamp(1rem, 2.6vw, 2.4rem);
+  margin-bottom: clamp(0.7rem, 1.7svh, 1.2rem);
 }
 
 .wid__card-link {
@@ -531,7 +517,7 @@ body {
 
 @media (max-width: 740px) {
   .wid__grid { grid-template-columns: 1fr; max-width: 28rem; gap: 1rem; }
-  .wid__card { min-height: 22rem; padding: 1.4rem; }
+  .wid__card { min-height: 18rem; padding: 1.15rem; }
   .wid__card-name { font-size: 1.8rem; }
   .wid__card-desc { font-size: 0.95rem; }
 }
