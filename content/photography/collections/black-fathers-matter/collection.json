@@ -1,0 +1,13 @@
+{
+  "title": "Black Fathers Matter",
+  "category": "Documentary / Culture",
+  "description": "Black Fathers Matter is an ongoing photography project by Hamza AM about Black fatherhood, presence, and the relationships that shape generations. The featured photograph focuses on the quiet exchange between a father and his young child.",
+  "published": true,
+  "featured": false,
+  "coverImage": "father-and-child.jpg",
+  "images": {
+    "father-and-child.jpg": {
+      "alt": "Black-and-white photograph of a father holding his young child and looking into his face"
+    }
+  }
+}

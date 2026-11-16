@@ -10,6 +10,7 @@ import json
 import re
 import shutil
 import tempfile
+from xml.etree.ElementTree import Element, SubElement, ElementTree
 from pathlib import Path
 from string import Template
 from urllib.parse import quote
@@ -238,6 +239,15 @@ def generate(root, output, preview):
         f'<li><a href="/photography/collections/{c["slug"]}/">{esc(c["title"])}</a></li>'
         for c in published))
     (output / 'photography.html').write_text(source, encoding='utf-8')
+    urls = [
+        '/', '/about', '/photography', '/real-estate-photography',
+        '/photography/real-estate/', '/photography/collections/',
+    ]
+    urls.extend(f'/photography/collections/{c["slug"]}/' for c in published)
+    sitemap = Element('urlset', xmlns='http://www.sitemaps.org/schemas/sitemap/0.9')
+    for path in urls:
+        SubElement(SubElement(sitemap, 'url'), 'loc').text = SITE + path
+    ElementTree(sitemap).write(output / 'sitemap.xml', encoding='utf-8', xml_declaration=True)
     return len(published), len(collections)
 
 
